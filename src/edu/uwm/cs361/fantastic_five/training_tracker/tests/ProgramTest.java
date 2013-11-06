@@ -8,20 +8,24 @@ import javax.jdo.PersistenceManager;
 import edu.uwm.cs361.fantastic_five.training_tracker.entities.Program;
 import static org.hamcrest.CoreMatchers.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class ProgramTest {
+	Program program;
+	
+	@Before
+	public void setUpTests() {
+		this.program = new Program("Example Program");
+	}
 	
 	@Test
 	public void testName() {
-		Program program = new Program("Example Program");
-		
 		assertEquals("Example Program", program.getName());
 	}
 	
 	@Test
 	public void testSetName() {
-		Program program = new Program("Example Program");
 		program.setName("Example Program 2");
 		
 		assertEquals("Example Program 2", program.getName());
@@ -29,7 +33,6 @@ public class ProgramTest {
 
 	@Test
 	public void testInstructor() {
-		Program program = new Program("Example Program");
 		program.setInstructor("Andrew Meyer");
 		
 		assertEquals("Andrew Meyer", program.getInstructor());
@@ -37,7 +40,6 @@ public class ProgramTest {
 	
 	@Test
 	public void testPrice() {
-		Program program = new Program("Example Program");
 		program.setPrice(22.50);
 		
 		assertTrue(22.50 == program.getPrice());
