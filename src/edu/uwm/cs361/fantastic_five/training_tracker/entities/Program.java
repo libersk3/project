@@ -23,9 +23,11 @@ public class Program {
 	@Persistent
 	private double price;
 	
-	public Program(String name)
+	public Program(String name, String instructor, double price)
 	{
 		this.name = name;
+		this.instructor = instructor;
+		this.price = price;
 	}
 
 	public Key getKey()

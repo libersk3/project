@@ -34,8 +34,12 @@ public class NewProgramFormServlet extends HttpServlet {
 		PersistenceManager pm = getPersistenceManager();
 
 		try {
-			pm.makePersistent(new Program(req.getParameter("name")));
-			resp.sendRedirect("/display");
+			pm.makePersistent(new Program(
+				req.getParameter("name"),
+				req.getParameter("instructor"),
+				Double.parseDouble(req.getParameter("price"))
+			));
+			resp.sendRedirect("/programs");
 		} finally {
 			pm.close();
 		}
