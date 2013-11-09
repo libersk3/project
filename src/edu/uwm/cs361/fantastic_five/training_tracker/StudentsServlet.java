@@ -8,7 +8,6 @@ import javax.servlet.http.*;
 
 import java.util.List;
 
-import edu.uwm.cs361.fantastic_five.training_tracker.entities.Program;
 import edu.uwm.cs361.fantastic_five.training_tracker.entities.Student;
 
 @SuppressWarnings("serial")
@@ -20,17 +19,17 @@ public class StudentsServlet extends HttpServlet {
 		
 		resp.setContentType("text/html");
 
+		resp.getWriter().println("<h1>List of Students: </h1>");
+		resp.getWriter().println("<br />");
 		resp.getWriter().println("<ul>");
-		for (Program program : (List<Program>) pm.newQuery(Program.class).execute()) {
-			resp.getWriter().println(program.getName());
+		for (Student student : (List<Student>) pm.newQuery(Student.class).execute()) {
+			resp.getWriter().println(student.getFirstName()+ " ");
+			resp.getWriter().println(student.getLastName());
 			resp.getWriter().println("<br/>");
-			resp.getWriter().println(program.getInstructor());
-			resp.getWriter().println("<br/>");
-			resp.getWriter().println(program.getPrice());
-			resp.getWriter().println("<br/>");
-			resp.getWriter().println("<hr/>");
 		}
-		resp.getWriter().println("<a href='programs/new'>New Program</a>");
+		resp.getWriter().println("<hr/>");
+		resp.getWriter().println("<br />");
+		resp.getWriter().println("<a href='students/new'>Create Student</a>");
 	}
 
 	private PersistenceManager getPersistenceManager()
