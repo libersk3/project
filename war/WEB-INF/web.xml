@@ -4,14 +4,8 @@ xmlns="http://java.sun.com/xml/ns/javaee"
 xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
-	<servlet>
-		<servlet-name>NewProgramForm</servlet-name>
-		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.NewProgramFormServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>NewProgramForm</servlet-name>
-		<url-pattern>/programs/new</url-pattern>
-	</servlet-mapping>
+	
+	<!-- Programs -->
 	<servlet>
 		<servlet-name>Programs</servlet-name>
 		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.ProgramsServlet</servlet-class>
@@ -20,6 +14,36 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>Programs</servlet-name>
 		<url-pattern>/programs</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>NewProgramForm</servlet-name>
+		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.NewProgramFormServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>NewProgramForm</servlet-name>
+		<url-pattern>/programs/new</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Students -->
+	<servlet>
+		<servlet-name>Students</servlet-name>
+		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.StudentsServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Students</servlet-name>
+		<url-pattern>/students</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>CreateStudentForm</servlet-name>
+		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.CreateStudentFormServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CreateStudentForm</servlet-name>
+		<url-pattern>/students/new</url-pattern>
+	</servlet-mapping>
+	
+	<!-- index -->
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
