@@ -3,30 +3,18 @@ import java.io.IOException;
 
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.http.*;
-
 
 import edu.uwm.cs361.fantastic_five.training_tracker.entities.Program;
 
 @SuppressWarnings("serial")
 public class NewProgramFormServlet extends HttpServlet {
-	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-
-		
-		resp.setContentType("text/html");
-
-		resp.getWriter().println("<form action='' method='POST'>");
-		resp.getWriter().println("<label for='name'>Program Name:</label>");
-		resp.getWriter().println("<input type='text' id='name' name='name' />");
-		resp.getWriter().println("<br>");
-		resp.getWriter().println("<label for='instructor'>instructor name:</label>");
-		resp.getWriter().println("<input type='text' id='instructor' name='instructor' />");
-		resp.getWriter().println("<br>");
-		resp.getWriter().println("<label for='price'>price:</label>");
-		resp.getWriter().println("<input type='text' id='price' name='price' />");
-		resp.getWriter().println("<br>");
-		resp.getWriter().println("<input type='submit' value='Create program' />");
-		resp.getWriter().println("</form>");
+	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+		String nextJSP = "/WEB-INF/pages/new_program_form.jsp";
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
+		dispatcher.forward(req, resp);
 	}
 	
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException
