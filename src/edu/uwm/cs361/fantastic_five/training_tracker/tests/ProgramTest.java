@@ -2,11 +2,7 @@ package edu.uwm.cs361.fantastic_five.training_tracker.tests;
 
 import static org.junit.Assert.*;
 
-import javax.jdo.JDOHelper;
-import javax.jdo.PersistenceManager;
-
 import edu.uwm.cs361.fantastic_five.training_tracker.entities.Program;
-import static org.hamcrest.CoreMatchers.*;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -50,23 +46,4 @@ public class ProgramTest {
 		
 		assertEquals(20.00, program.getPrice(), 0.001);
 	}
-	
-//	@Test
-//	public void testKey() {
-//		Program program = new Program("Example Program");
-//		Program program2 = new Program("Example Program");
-//		
-//		PersistenceManager pm = getPersistenceManager();
-//		
-//		pm.makePersistent(program);
-//		pm.makePersistent(program2);
-//		
-//		assertThat(program.getKey(), is(not(program2.getKey())));
-//	}
-//
-//	private PersistenceManager getPersistenceManager()
-//	{
-//		return JDOHelper.getPersistenceManagerFactory("transactions-optional").getPersistenceManager();
-//	}
-	
 }
