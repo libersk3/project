@@ -1,5 +1,6 @@
 package edu.uwm.cs361.fantastic_five.training_tracker.entities;
 
+import java.util.Set;
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
@@ -22,6 +23,10 @@ public class Program {
 	
 	@Persistent
 	private double price;
+	
+	@Unowned
+	@Persistent
+	private Set<Student> students;
 	
 	public Program(String name, String instructor, double price)
 	{
@@ -60,5 +65,10 @@ public class Program {
 		this.price = price;
 	}
 	
-	
+	public void addStudent(Student student){
+		students.add(student);
+	}
+	public Set<Student> listStudents(){
+		return students;
+	}
 }
