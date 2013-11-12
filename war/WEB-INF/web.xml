@@ -43,6 +43,44 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<url-pattern>/students/new</url-pattern>
 	</servlet-mapping>
 	
+	<!-- Log-in -->
+	<servlet>
+		<servlet-name>LogIn</servlet-name>
+		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.LogInServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LogIn</servlet-name>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Homepage</servlet-name>
+		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.HomepageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Homepage</servlet-name>
+		<url-pattern>/homepage</url-pattern>
+	</servlet-mapping>
+	
+	<!-- ClassList/Enrolling -->
+	<servlet>
+		<servlet-name>SingleProgram</servlet-name>
+		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.SingleProgramServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SingleProgram</servlet-name>
+		<url-pattern>/programs/single</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>EnrollStudent</servlet-name>
+		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.EnrollStudentServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EnrollStudent</servlet-name>
+		<url-pattern>/programs/enroll</url-pattern>
+	</servlet-mapping>
+	
 	<!-- index -->
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
