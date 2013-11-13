@@ -45,6 +45,15 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	
 	<!-- Log-in -->
 	<servlet>
+		<servlet-name>SignUp</servlet-name>
+		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.SignUpServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SignUp</servlet-name>
+		<url-pattern>/signup</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
 		<servlet-name>LogIn</servlet-name>
 		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.LogInServlet</servlet-class>
 	</servlet>
@@ -79,6 +88,44 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet-mapping>
 		<servlet-name>EnrollStudent</servlet-name>
 		<url-pattern>/programs/enroll</url-pattern>
+	</servlet-mapping>
+	
+	<!-- CookieHelperServlets -->
+	<servlet>
+		<servlet-name>User</servlet-name>
+		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.UserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>User</servlet-name>
+		<url-pattern>/user</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>LogOut</servlet-name>
+		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.LogOutServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LogOut</servlet-name>
+		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Treasury -->
+	<servlet>
+		<servlet-name>Treasury</servlet-name>
+		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.TreasuryServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Treasury</servlet-name>
+		<url-pattern>/treasury</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ProgramTreasury</servlet-name>
+		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.ProgramTreasuryServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProgramTreasury</servlet-name>
+		<url-pattern>/treasury/program</url-pattern>
 	</servlet-mapping>
 	
 	<!-- index -->
