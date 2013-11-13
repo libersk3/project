@@ -3,9 +3,8 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <t:mainLayout title="Programs">
-		<ul>
 		<c:forEach items="${programs}" var="program">
-			${program.name}
+			<a href="programs/single?id=${program.key.id}">${program.name}</a>
 			<br/>
 			${program.instructor}
 			<br/>
@@ -14,4 +13,8 @@
 			<hr/>
 		</c:forEach>
 		<a href='programs/new'>New Program</a>
+		<br/>
+		<br/>
+		<a href='/homepage'>Home</a>
+		<a href='/login'>Log Out</a>
 </t:mainLayout>
