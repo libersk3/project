@@ -15,6 +15,7 @@ public class HomepageServlet extends HttpServlet
 		resp.setContentType("text/html");
 		resp.getWriter().println("<h1><a href='/programs'>PROGRAMS</a><h1>");
 		resp.getWriter().println("<h1><a href='/students'>STUDENTS</a><h1>");
-		resp.getWriter().println("<br><h2><a href='/login' method='GET'>Log Out</a><h2>");
+		resp.getWriter().println("<h1><a href='/treasury'>TREASURY</a></h1>");
+		resp.getWriter().println("<br><h2><a href='/logout'>Log Out</a><h2>");
 	}
 }
