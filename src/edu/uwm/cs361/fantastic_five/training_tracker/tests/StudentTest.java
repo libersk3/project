@@ -12,7 +12,7 @@ public class StudentTest {
 	
 	@Before
 	public void setUpTest() {
-		this.student = new Student("George", "Washington");
+		this.student = new Student("George", "Washington", "gw@gmail.com");
 	}
 	
 	@Test
@@ -35,6 +35,17 @@ public class StudentTest {
 	public void testSetLastName() {
 		student.setLastName("Franklin");
 		assertEquals("Franklin", student.getLastName() );
+	}
+	
+	@Test
+	public void testUpdateBalance() {
+		student.updateBalance(5.00);
+		assertEquals(5.00, student.getBalance(), .001);
+	}
+	
+	public void testBalanceToString(){
+		student.updateBalance(5.00);
+		assertEquals("$5.00",student.BalanceToString());
 	}
 	
 } // end class
