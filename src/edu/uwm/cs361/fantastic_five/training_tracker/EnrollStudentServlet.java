@@ -53,15 +53,23 @@ public class EnrollStudentServlet extends HttpServlet {
 	{	
 		PersistenceManager pm = getPersistenceManager();
 		String studentKey = req.getParameter("student");
-		long studentKeyLong = Long.parseLong(studentKey);
-		String key = req.getParameter("id");
-		long keyLong = Long.parseLong(key);
-		
-		Program program = pm.getObjectById(Program.class,keyLong);
-		Student student = pm.getObjectById(Student.class,studentKeyLong);
-		program.addStudent(student);
-		
-		resp.sendRedirect("/programs");
+		if (studentKey == null) {
+			resp.getWriter().println("<h3>Error: No student selected</h3>");
+			resp.getWriter().println("<form action='/programs'>");
+			resp.getWriter().println("<input type='submit' value='Back to Programs Page'>");
+			resp.getWriter().println("</form>");
+		}
+		else {
+			long studentKeyLong = Long.parseLong(studentKey);
+			String key = req.getParameter("id");
+			long keyLong = Long.parseLong(key);
+			
+			Program program = pm.getObjectById(Program.class,keyLong);
+			Student student = pm.getObjectById(Student.class,studentKeyLong);
+			program.addStudent(student);
+			
+			resp.sendRedirect("/programs");
+		}
 	}
 	
 	private PersistenceManager getPersistenceManager()
