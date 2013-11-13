@@ -54,6 +54,8 @@ public class EnrollStudentServlet extends HttpServlet {
 		PersistenceManager pm = getPersistenceManager();
 		String studentKey = req.getParameter("student");
 		if (studentKey == null) {
+			resp.setContentType("text/html");
+
 			resp.getWriter().println("<h3>Error: No student selected</h3>");
 			resp.getWriter().println("<form action='/programs'>");
 			resp.getWriter().println("<input type='submit' value='Back to Programs Page'>");
