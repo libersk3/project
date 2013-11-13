@@ -46,7 +46,7 @@ public class EnrollStudentServlet extends HttpServlet {
 		resp.getWriter().println("</ul>");
 
 		resp.getWriter().println("<br><br><a href='/homepage'>Home</a>");
-		resp.getWriter().println("<a href='/login' method='GET'>Log Out</a>");
+		resp.getWriter().println("<a href='/logout'>Log Out</a>");
 	}
 	
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException
