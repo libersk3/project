@@ -15,6 +15,12 @@
 			<ul>
 				<li><a href="/programs">Programs</a></li>
 			</ul>
+			<ul>
+				<li><a href="/students">Students</a></li>
+			</ul>
+			<ul>
+				<li><a href="/treasury">Treasury</a></li>
+			</ul>
 		</nav>
 	</header>
 	<article class="main">
@@ -23,4 +29,10 @@
 		</section>
 	</article>
 </body>
+<footer>
+
+	<a href='/home' class="button green">back</a>
+	<a href='/homepage' class="button blue">home</a>
+	<a href='/login' class="button gray">logout</a>
+</footer>
 </html>

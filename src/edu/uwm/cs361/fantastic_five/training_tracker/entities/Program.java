@@ -67,6 +67,10 @@ public class Program {
 		this.price = price;
 	}
 	
+	public double getRevenue(){
+		return students.size()*price;
+	}
+	
 	public void addStudent(Student student){
 		students.add(student);
 	}

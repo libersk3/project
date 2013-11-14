@@ -20,12 +20,22 @@ public class Student {
 	@Persistent
 	private String lastName;
 	
+	@Persistent
+	private String _email;
+	
+	@Persistent 
+	private double balance;
+	
+
+	
 	//****************************************************
 	
-	public Student(String firstName, String lastName) {
+	public Student(String firstName, String lastName, String _email) {
 		
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this._email = _email;
+		balance = 0.0;
 	}
 	
 	//****************************************************
@@ -42,12 +52,32 @@ public class Student {
 		return this.lastName;
 	}
 	
+	public String get_email(){
+		return this._email;
+	}
+	
+	public String getFullName() {
+		return(this.firstName +" " + this.lastName);
+	}
+	
 	public void setFirstName(String newFirstName) {
 		this.firstName = newFirstName;
 	}
 	
 	public void setLastName(String newLastName) {
 		this.lastName = newLastName;
+	}
+	
+	public double getBalance(){
+		return balance;
+	}
+	
+	public String balanceToString(){
+		return String.format("$%.2f", new Double(balance));
+	}
+	
+	public void updateBalance(double price){
+		balance+=price;
 	}
 	
 } //end class
