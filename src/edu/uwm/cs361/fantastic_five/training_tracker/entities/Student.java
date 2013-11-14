@@ -73,7 +73,7 @@ public class Student {
 	}
 	
 	public String BalanceToString(){
-		return("$"+balance);
+		return String.format("$%.2f", new Double(balance));
 	}
 	
 	public void updateBalance(double price){

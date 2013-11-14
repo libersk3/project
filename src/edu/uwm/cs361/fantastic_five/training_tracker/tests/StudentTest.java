@@ -43,6 +43,7 @@ public class StudentTest {
 		assertEquals(5.00, student.getBalance(), .001);
 	}
 	
+	@Test
 	public void testBalanceToString(){
 		student.updateBalance(5.00);
 		assertEquals("$5.00",student.BalanceToString());
