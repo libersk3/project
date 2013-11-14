@@ -72,7 +72,7 @@ public class Student {
 		return balance;
 	}
 	
-	public String BalanceToString(){
+	public String balanceToString(){
 		return String.format("$%.2f", new Double(balance));
 	}
 	
