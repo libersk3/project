@@ -2,9 +2,7 @@ package edu.uwm.cs361.fantastic_five.training_tracker;
 
 import java.io.IOException;
 
-import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
@@ -14,7 +12,7 @@ import edu.uwm.cs361.fantastic_five.training_tracker.entities.Program;
 import edu.uwm.cs361.fantastic_five.training_tracker.entities.Student;
 
 @SuppressWarnings("serial")
-public class EnrollStudentServlet extends HttpServlet {
+public class EnrollStudentServlet extends BaseServlet {
 	@SuppressWarnings("unchecked")
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		PersistenceManager pm = getPersistenceManager();
@@ -25,16 +23,13 @@ public class EnrollStudentServlet extends HttpServlet {
 		Program program = pm.getObjectById(Program.class, keyLong);
 
 		req.setAttribute("program", pm.getObjectById(Program.class, keyLong));
-		String nextJSP = "/WEB-INF/pages/enroll_student.jsp";
-
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
 
 		List<Student> programStudents = (List<Student>)pm.newQuery(Student.class).execute();
 		ArrayList<Student> studentList = new ArrayList<Student>(programStudents);
 		studentList.removeAll(program.listStudents());
 
 		req.setAttribute("StudentsList", studentList);
-		dispatcher.forward(req, resp);
+		forwardToJsp("enroll_student.jsp", req, resp);
 	}
 
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException
@@ -60,10 +55,5 @@ public class EnrollStudentServlet extends HttpServlet {
 
 			resp.sendRedirect("/programs");
 		}
-	}
-
-	private PersistenceManager getPersistenceManager()
-	{
-		return JDOHelper.getPersistenceManagerFactory("transactions-optional").getPersistenceManager();
 	}
 }

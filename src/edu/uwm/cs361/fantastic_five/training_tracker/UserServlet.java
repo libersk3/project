@@ -3,12 +3,11 @@ package edu.uwm.cs361.fantastic_five.training_tracker;
 import java.io.IOException;
 
 import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @SuppressWarnings("serial")
-public class UserServlet extends HttpServlet
+public class UserServlet extends BaseServlet
 {
 	@Override
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException

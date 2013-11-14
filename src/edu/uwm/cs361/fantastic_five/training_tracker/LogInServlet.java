@@ -1,10 +1,8 @@
 package edu.uwm.cs361.fantastic_five.training_tracker;
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -14,14 +12,12 @@ import com.google.appengine.api.datastore.FetchOptions;
 import com.google.appengine.api.datastore.Query;
 
 @SuppressWarnings("serial")
-public class LogInServlet extends HttpServlet
+public class LogInServlet extends BaseServlet
 {
 	@Override
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException
 	{
-		String nextJSP = "/WEB-INF/pages/login.jsp";
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
-		dispatcher.forward(req, resp);
+		forwardToJsp("login.jsp", req, resp);
 	}
 
 	@Override
@@ -41,9 +37,7 @@ public class LogInServlet extends HttpServlet
 		} else {
 			req.setAttribute("error", true);
 
-			String nextJSP = "/WEB-INF/pages/login.jsp";
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
-			dispatcher.forward(req, resp);
+			forwardToJsp("login.jsp", req, resp);
 		}
 	}
 }
