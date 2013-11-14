@@ -35,22 +35,7 @@ public class CreateStudentFormServlet extends HttpServlet {
 			} finally {
 				pm.close();
 			}
-		
 		}
-//			PersistenceManager pm = getPersistenceManager();
-//	
-//			try {
-//				
-//				pm.makePersistent(new Student(
-//					req.getParameter("firstName"),
-//					req.getParameter("lastName")
-//
-//				));
-//				resp.sendRedirect("/students");
-//			} finally {
-//				pm.close();
-//			}
-//		}
 		private PersistenceManager getPersistenceManager()
 		{
 			return JDOHelper.getPersistenceManagerFactory("transactions-optional").getPersistenceManager();
