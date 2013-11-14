@@ -1,15 +1,12 @@
 package edu.uwm.cs361.fantastic_five.training_tracker;
 
 import java.io.IOException;
-import java.util.ArrayList;
-
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
-import edu.uwm.cs361.fantastic_five.training_tracker.entities.Program;
 import edu.uwm.cs361.fantastic_five.training_tracker.entities.Student;
 
 @SuppressWarnings("serial")

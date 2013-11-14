@@ -8,9 +8,6 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
-import java.util.List;
-
-import edu.uwm.cs361.fantastic_five.training_tracker.entities.Program;
 import edu.uwm.cs361.fantastic_five.training_tracker.entities.Student;
 
 @SuppressWarnings("serial")

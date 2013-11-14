@@ -10,8 +10,6 @@ import javax.servlet.http.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
-
 import edu.uwm.cs361.fantastic_five.training_tracker.entities.Program;
 import edu.uwm.cs361.fantastic_five.training_tracker.entities.Student;
 
