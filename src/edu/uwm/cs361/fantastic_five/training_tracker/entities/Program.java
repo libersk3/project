@@ -26,9 +26,6 @@ public class Program {
 	@Persistent
 	private double price;
 	
-	@Persistent
-	private double revenue;
-	
 	@Unowned
 	@Persistent
 	private Set<Student> students;
@@ -71,12 +68,11 @@ public class Program {
 	}
 	
 	public double getRevenue(){
-		return revenue;
+		return students.size()*price;
 	}
 	
 	public void addStudent(Student student){
 		students.add(student);
-		revenue = students.size()*price;
 	}
 	public Set<Student> listStudents(){
 		return students;
