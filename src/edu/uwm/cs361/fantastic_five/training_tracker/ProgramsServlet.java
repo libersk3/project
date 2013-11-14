@@ -8,10 +8,13 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
+import java.util.List;
+
 import edu.uwm.cs361.fantastic_five.training_tracker.entities.Program;
 
 @SuppressWarnings("serial")
 public class ProgramsServlet extends HttpServlet {
+	@SuppressWarnings("unchecked")
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		PersistenceManager pm = getPersistenceManager();
 		

@@ -1,6 +1,8 @@
 package edu.uwm.cs361.fantastic_five.training_tracker;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.servlet.RequestDispatcher;
