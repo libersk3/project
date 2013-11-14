@@ -14,7 +14,6 @@ import edu.uwm.cs361.fantastic_five.training_tracker.entities.Program;
 @SuppressWarnings("serial")
 public class ProgramTreasuryServlet extends HttpServlet {
 
-	@SuppressWarnings("unchecked")
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException
 	{
 		PersistenceManager pm = getPersistenceManager();
