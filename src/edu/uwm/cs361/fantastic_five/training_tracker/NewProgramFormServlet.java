@@ -16,7 +16,7 @@ public class NewProgramFormServlet extends HttpServlet {
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
 		dispatcher.forward(req, resp);
 	}
-	
+
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException
 	{
 		PersistenceManager pm = getPersistenceManager();

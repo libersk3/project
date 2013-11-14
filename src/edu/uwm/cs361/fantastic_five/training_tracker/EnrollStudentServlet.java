@@ -10,8 +10,6 @@ import javax.servlet.http.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
-
 import edu.uwm.cs361.fantastic_five.training_tracker.entities.Program;
 import edu.uwm.cs361.fantastic_five.training_tracker.entities.Student;
 
@@ -38,9 +36,9 @@ public class EnrollStudentServlet extends HttpServlet {
 		req.setAttribute("StudentsList", studentList);
 		dispatcher.forward(req, resp);
 	}
-	
+
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException
-	{	
+	{
 		PersistenceManager pm = getPersistenceManager();
 		String studentKey = req.getParameter("student");
 		if (studentKey == null) {
@@ -55,15 +53,15 @@ public class EnrollStudentServlet extends HttpServlet {
 			long studentKeyLong = Long.parseLong(studentKey);
 			String key = req.getParameter("id");
 			long keyLong = Long.parseLong(key);
-			
+
 			Program program = pm.getObjectById(Program.class,keyLong);
 			Student student = pm.getObjectById(Student.class,studentKeyLong);
 			program.addStudent(student);
-			
+
 			resp.sendRedirect("/programs");
 		}
 	}
-	
+
 	private PersistenceManager getPersistenceManager()
 	{
 		return JDOHelper.getPersistenceManagerFactory("transactions-optional").getPersistenceManager();

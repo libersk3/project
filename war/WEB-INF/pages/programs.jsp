@@ -5,8 +5,8 @@
 
 <t:mainLayout title="Programs">
 		<ul class="accordion">
-		<c:forEach items="${programs}" var="program">	
-				
+		<c:forEach items="${programs}" var="program">
+
 			<li>
 			<h2><a href="programs/single?id=${program.key.id}">${program.name}</a></h2>
 			<div class ="content">${program.instructor}

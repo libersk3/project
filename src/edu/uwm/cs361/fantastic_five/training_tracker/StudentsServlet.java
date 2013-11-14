@@ -8,15 +8,11 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
-import java.util.List;
-
-import edu.uwm.cs361.fantastic_five.training_tracker.entities.Program;
 import edu.uwm.cs361.fantastic_five.training_tracker.entities.Student;
 
 @SuppressWarnings("serial")
 public class StudentsServlet extends HttpServlet {
 
-	@SuppressWarnings("unchecked")
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		PersistenceManager pm = getPersistenceManager();
 
@@ -31,5 +27,5 @@ public class StudentsServlet extends HttpServlet {
 	{
 		return JDOHelper.getPersistenceManagerFactory("transactions-optional").getPersistenceManager();
 	}
-	
+
 } //end class
