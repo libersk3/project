@@ -14,14 +14,11 @@ import edu.uwm.cs361.fantastic_five.training_tracker.entities.Program;
 
 @SuppressWarnings("serial")
 public class TreasuryServlet extends HttpServlet {
-	
+
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException
 	{
-		
 		String nextJSP = "/WEB-INF/pages/treasury.jsp";
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
 		dispatcher.forward(req, resp);
 	}
-
-	
 }

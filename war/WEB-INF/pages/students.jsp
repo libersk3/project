@@ -5,8 +5,8 @@
 
 <t:mainLayout title="Students">
 <ul class="accordion">
-		<c:forEach items="${students}" var="student">	
-				
+		<c:forEach items="${students}" var="student">
+
 			<li>
 			<h2><a href="students/single?id=${student.key.id}"> ${student.firstName}</a></h2>
 			<div class ="content">

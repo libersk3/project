@@ -14,13 +14,13 @@ import edu.uwm.cs361.fantastic_five.training_tracker.entities.Student;
 
 @SuppressWarnings("serial")
 public class CreateStudentFormServlet extends HttpServlet {
-	
+
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		String nextJSP = "/WEB-INF/pages/create_student_form.jsp";
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
 		dispatcher.forward(req, resp);
 }
-		
+
 		public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException
 		{
 			PersistenceManager pm = getPersistenceManager();
@@ -40,5 +40,5 @@ public class CreateStudentFormServlet extends HttpServlet {
 		{
 			return JDOHelper.getPersistenceManagerFactory("transactions-optional").getPersistenceManager();
 		}
-	
+
 } //end class

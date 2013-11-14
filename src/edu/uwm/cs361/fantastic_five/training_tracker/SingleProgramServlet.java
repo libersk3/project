@@ -15,11 +15,11 @@ import edu.uwm.cs361.fantastic_five.training_tracker.entities.Student;
 public class SingleProgramServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		PersistenceManager pm = getPersistenceManager();
-		
+
 		String id = req.getParameter("id");
 		long idLong = Long.parseLong(id);
 		Program program = pm.getObjectById(Program.class,idLong);
-		
+
 		if (program != null) {
 			resp.setContentType("text/html");
 			resp.getWriter().println("<h1> Enrolled Students in " + program.getName() + ": </h1>");

@@ -9,5 +9,5 @@
 		<br>
 		<a href='/treasury' class="button gray button-main">Treasury</a><br><br><br><br>
 </footer>
-		
+
 </t:mainLayout>

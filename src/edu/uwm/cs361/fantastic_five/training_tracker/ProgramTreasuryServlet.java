@@ -27,7 +27,7 @@ public class ProgramTreasuryServlet extends HttpServlet {
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
 		dispatcher.forward(req, resp);
 	}
-	
+
 	private PersistenceManager getPersistenceManager()
 	{
 		return JDOHelper.getPersistenceManagerFactory("transactions-optional").getPersistenceManager();

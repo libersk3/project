@@ -13,6 +13,6 @@
 		<br>
 		<a href='/treasuryinstructor' class="button gray button-main">instructor</a><br><br><br><br>
 </footer>
-		
-		
+
+
 </t:mainLayout>

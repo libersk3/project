@@ -5,13 +5,13 @@
 
 <t:mainLayout title="Treasury_by_programs">
 		<ul class="accordion">
-		<c:forEach items="${programs}" var="program">	
-				
+		<c:forEach items="${programs}" var="program">
+
 			<li>
 			<h2><a href="programs/single?id=${program.key.id}">${program.name}</a></h2>
 			<div class ="content">${program.instructor}
 			<br/>
-			total income: 
+			total income:
 			${program.revenue}
 			</div>
 			</li>

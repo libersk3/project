@@ -16,7 +16,7 @@ public class SignUpServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException
 	{
 		resp.setContentType("text/html");
-		resp.getWriter().println("<form action= '' method='POST'>"); 
+		resp.getWriter().println("<form action= '' method='POST'>");
 		resp.getWriter().println("<input type='password' name='password'/>");
 		resp.getWriter().println("<br><input type='submit' value='Submit'/>");
 		resp.getWriter().println("</form>");

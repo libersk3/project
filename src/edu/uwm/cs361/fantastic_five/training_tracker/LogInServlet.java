@@ -21,8 +21,8 @@ public class LogInServlet extends HttpServlet
 		resp.getWriter().println("<h1> Log In </h1>");
 		if (req.getParameter("error") != null)
 			resp.getWriter().println("<h3>**Username or password is incorrect**</h3>");
-		
-		resp.getWriter().println("<form action= '/login' method='POST'>"); 
+
+		resp.getWriter().println("<form action= '/login' method='POST'>");
 		resp.getWriter().println("<br><br>Username: <input type='text' name='username'/>");
 		resp.getWriter().println("<br>Password: <input type='password' name='password'/>");
 		resp.getWriter().println("<br><input type='submit' value='Log In'/>");

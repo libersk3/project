@@ -7,7 +7,7 @@
 	<form class='well' action='' method='POST'>
 
 		<c:if test='${not empty program}'>
-					
+
 			<h1> Enroll Student in ${program.name}:</h1>
 			<form action='' method = 'POST'>
 				<c:forEach items="${StudentsList}" var="student">

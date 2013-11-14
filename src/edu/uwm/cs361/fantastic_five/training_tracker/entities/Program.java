@@ -16,20 +16,20 @@ public class Program {
 	@PrimaryKey
 	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
 	private Key key;
-	
+
 	@Persistent
 	private String name;
 
 	@Persistent
 	private String instructor;
-	
+
 	@Persistent
 	private double price;
-	
+
 	@Unowned
 	@Persistent
 	private Set<Student> students;
-	
+
 	public Program(String name, String instructor, double price)
 	{
 		this.name = name;
@@ -59,18 +59,18 @@ public class Program {
 	{
 		this.instructor = instructor;
 	}
-	
+
 	public double getPrice(){
 		return price;
 	}
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	
+
 	public double getRevenue(){
 		return students.size()*price;
 	}
-	
+
 	public void addStudent(Student student){
 		students.add(student);
 	}

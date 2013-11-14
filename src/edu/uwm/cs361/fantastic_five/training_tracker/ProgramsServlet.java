@@ -17,9 +17,9 @@ public class ProgramsServlet extends HttpServlet {
 	@SuppressWarnings("unchecked")
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		PersistenceManager pm = getPersistenceManager();
-		
+
 		req.setAttribute("programs", pm.newQuery(Program.class).execute());
-		
+
 		String nextJSP = "/WEB-INF/pages/programs.jsp";
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
 		dispatcher.forward(req, resp);

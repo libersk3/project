@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @SuppressWarnings("serial")
-public class UserServlet extends HttpServlet 
+public class UserServlet extends HttpServlet
 {
 	@Override
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException
@@ -26,7 +26,7 @@ public class UserServlet extends HttpServlet
 
 		if (username != null) {
 			resp.sendRedirect("/homepage");
-		} 
+		}
 		else {
 			resp.setContentType("text/html");
 			resp.getWriter().println("<h1>Not logged in</h1>");

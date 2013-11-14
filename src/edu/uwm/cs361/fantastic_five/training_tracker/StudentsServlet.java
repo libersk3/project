@@ -31,5 +31,5 @@ public class StudentsServlet extends HttpServlet {
 	{
 		return JDOHelper.getPersistenceManagerFactory("transactions-optional").getPersistenceManager();
 	}
-	
+
 } //end class
