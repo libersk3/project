@@ -17,6 +17,6 @@ public class ProgramTreasuryServlet extends BaseServlet {
 
 		req.setAttribute("programs", pm.newQuery(Program.class).execute());
 
-		forwardToJsp("programs.jsp", req, resp);
+		forwardToJsp("program_treasury.jsp", req, resp);
 	}
 }
