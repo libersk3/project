@@ -5,9 +5,8 @@ import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.google.appengine.api.datastore.DatastoreService;
-import com.google.appengine.api.datastore.DatastoreServiceFactory;
-import com.google.appengine.api.datastore.Entity;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.UserCreator;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.requests.SignUpRequest;
 
 @SuppressWarnings("serial")
 public class SignUpServlet extends BaseServlet {
@@ -23,15 +22,11 @@ public class SignUpServlet extends BaseServlet {
 	@Override
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException
 	{
-		String password = req.getParameter("password");
-		if (password.equals("password")) {
-			DatastoreService ds = DatastoreServiceFactory.getDatastoreService();
-			Entity user = new Entity("User");
-			user.setProperty("username", "admin");
-			user.setProperty("password", "password");
-			user.setProperty("access", "Admin");
-			ds.put(user);
-			resp.sendRedirect("/login");
-		}
+		SignUpRequest signUpReq = new SignUpRequest();
+		signUpReq.password = req.getParameter("password");
+
+		new UserCreator().signUp(signUpReq);
+
+		resp.sendRedirect("/login");
 	}
 }

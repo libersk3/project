@@ -2,11 +2,11 @@ package edu.uwm.cs361.fantastic_five.training_tracker.servlets;
 
 import java.io.IOException;
 
-import javax.jdo.PersistenceManager;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
-import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Student;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.StudentCreator;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.requests.CreateStudentRequest;
 
 @SuppressWarnings("serial")
 public class CreateStudentFormServlet extends BaseServlet {
@@ -17,17 +17,13 @@ public class CreateStudentFormServlet extends BaseServlet {
 
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException
 	{
-		PersistenceManager pm = getPersistenceManager();
+		CreateStudentRequest createRequest = new CreateStudentRequest();
+		createRequest.firstName = req.getParameter("firstName");
+		createRequest.lastName = req.getParameter("lastName");
+		createRequest.email = req.getParameter("email");
 
-		try {
-			pm.makePersistent(new Student(
-				req.getParameter("first name"),
-				req.getParameter("last name"),
-				req.getParameter("email")
-			));
-			resp.sendRedirect("/students");
-		} finally {
-			pm.close();
-		}
+		new StudentCreator().createStudent(createRequest);
+
+		resp.sendRedirect("/students");
 	}
-} //end class
+}

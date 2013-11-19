@@ -1,11 +1,13 @@
 package edu.uwm.cs361.fantastic_five.training_tracker.servlets;
+
 import java.io.IOException;
 
-import javax.jdo.PersistenceManager;
 import javax.servlet.ServletException;
-import javax.servlet.http.*;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Program;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.ProgramCreator;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.requests.CreateProgramRequest;
 
 @SuppressWarnings("serial")
 public class NewProgramFormServlet extends BaseServlet {
@@ -15,17 +17,13 @@ public class NewProgramFormServlet extends BaseServlet {
 
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException
 	{
-		PersistenceManager pm = getPersistenceManager();
+		CreateProgramRequest createRequest = new CreateProgramRequest();
+		createRequest.name = req.getParameter("name");
+		createRequest.instructor = req.getParameter("instructor");
+		createRequest.price = req.getParameter("price");
 
-		try {
-			pm.makePersistent(new Program(
-				req.getParameter("name"),
-				req.getParameter("instructor"),
-				Double.parseDouble(req.getParameter("price"))
-			));
-			resp.sendRedirect("/programs");
-		} finally {
-			pm.close();
-		}
+		new ProgramCreator().createProgram(createRequest);
+
+		resp.sendRedirect("/programs");
 	}
 }
