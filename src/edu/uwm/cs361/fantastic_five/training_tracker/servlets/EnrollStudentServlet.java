@@ -1,4 +1,4 @@
-package edu.uwm.cs361.fantastic_five.training_tracker;
+package edu.uwm.cs361.fantastic_five.training_tracker.servlets;
 
 import java.io.IOException;
 
@@ -8,8 +8,9 @@ import javax.servlet.http.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import edu.uwm.cs361.fantastic_five.training_tracker.entities.Program;
-import edu.uwm.cs361.fantastic_five.training_tracker.entities.Student;
+
+import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Program;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Student;
 
 @SuppressWarnings("serial")
 public class EnrollStudentServlet extends BaseServlet {

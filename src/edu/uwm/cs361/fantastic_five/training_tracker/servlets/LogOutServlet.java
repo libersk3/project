@@ -1,4 +1,4 @@
-package edu.uwm.cs361.fantastic_five.training_tracker;
+package edu.uwm.cs361.fantastic_five.training_tracker.servlets;
 
 import java.io.IOException;
 
