@@ -1,4 +1,4 @@
-package edu.uwm.cs361.fantastic_five.training_tracker.entities;
+package edu.uwm.cs361.fantastic_five.training_tracker.app.entities;
 
 import java.util.Set;
 

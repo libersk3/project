@@ -1,8 +1,8 @@
 package edu.uwm.cs361.fantastic_five.training_tracker.tests;
 
 import static org.junit.Assert.*;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Student;
 
-import edu.uwm.cs361.fantastic_five.training_tracker.entities.Student;
 import org.junit.Before;
 import org.junit.Test;
 

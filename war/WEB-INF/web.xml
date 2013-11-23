@@ -8,7 +8,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<!-- Programs -->
 	<servlet>
 		<servlet-name>Programs</servlet-name>
-		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.ProgramsServlet</servlet-class>
+		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.servlets.ProgramsServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Programs</servlet-name>
@@ -17,7 +17,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 
 	<servlet>
 		<servlet-name>NewProgramForm</servlet-name>
-		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.NewProgramFormServlet</servlet-class>
+		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.servlets.NewProgramFormServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>NewProgramForm</servlet-name>
@@ -27,7 +27,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<!-- Students -->
 	<servlet>
 		<servlet-name>Students</servlet-name>
-		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.StudentsServlet</servlet-class>
+		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.servlets.StudentsServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Students</servlet-name>
@@ -36,7 +36,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 
 	<servlet>
 		<servlet-name>CreateStudentForm</servlet-name>
-		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.CreateStudentFormServlet</servlet-class>
+		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.servlets.CreateStudentFormServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>CreateStudentForm</servlet-name>
@@ -46,7 +46,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<!-- Log-in -->
 	<servlet>
 		<servlet-name>SignUp</servlet-name>
-		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.SignUpServlet</servlet-class>
+		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.servlets.SignUpServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>SignUp</servlet-name>
@@ -55,7 +55,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 
 	<servlet>
 		<servlet-name>LogIn</servlet-name>
-		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.LogInServlet</servlet-class>
+		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.servlets.LogInServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>LogIn</servlet-name>
@@ -64,7 +64,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 
 	<servlet>
 		<servlet-name>Homepage</servlet-name>
-		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.HomepageServlet</servlet-class>
+		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.servlets.HomepageServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Homepage</servlet-name>
@@ -74,7 +74,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<!-- ClassList/Enrolling -->
 	<servlet>
 		<servlet-name>SingleProgram</servlet-name>
-		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.SingleProgramServlet</servlet-class>
+		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.servlets.SingleProgramServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>SingleProgram</servlet-name>
@@ -83,7 +83,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 
 	<servlet>
 		<servlet-name>EnrollStudent</servlet-name>
-		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.EnrollStudentServlet</servlet-class>
+		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.servlets.EnrollStudentServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>EnrollStudent</servlet-name>
@@ -93,7 +93,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<!-- CookieHelperServlets -->
 	<servlet>
 		<servlet-name>User</servlet-name>
-		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.UserServlet</servlet-class>
+		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.servlets.UserServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>User</servlet-name>
@@ -102,7 +102,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 
 	<servlet>
 		<servlet-name>LogOut</servlet-name>
-		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.LogOutServlet</servlet-class>
+		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.servlets.LogOutServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>LogOut</servlet-name>
@@ -112,7 +112,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<!-- Treasury -->
 	<servlet>
 		<servlet-name>Treasury</servlet-name>
-		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.TreasuryServlet</servlet-class>
+		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.servlets.TreasuryServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Treasury</servlet-name>
@@ -121,7 +121,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 
 	<servlet>
 		<servlet-name>ProgramTreasury</servlet-name>
-		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.ProgramTreasuryServlet</servlet-class>
+		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.servlets.ProgramTreasuryServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>ProgramTreasury</servlet-name>
