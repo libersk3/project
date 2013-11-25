@@ -2,36 +2,12 @@ package edu.uwm.cs361.fantastic_five.training_tracker.tests;
 
 import static org.junit.Assert.*;
 
-import javax.jdo.JDOHelper;
-import javax.jdo.PersistenceManager;
-
-import static org.hamcrest.CoreMatchers.*;
-
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import com.google.appengine.tools.development.testing.LocalDatastoreServiceTestConfig;
-import com.google.appengine.tools.development.testing.LocalServiceTestHelper;
-import com.google.appengine.tools.development.testing.LocalTaskQueueTestConfig;
 
 import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Program;
 
 public class ProgramTest {
-
-	private final LocalServiceTestHelper helper = new LocalServiceTestHelper(
-			new LocalTaskQueueTestConfig(), new LocalDatastoreServiceTestConfig());
-
-	@Before
-	public void setUp() {
-		helper.setUp();
-	}
-
-	@After
-	public void tearDown() {
-		helper.tearDown();
-	}
-
 	Program program;
 
 	@Before
@@ -69,22 +45,5 @@ public class ProgramTest {
 		program.setPrice(20.00);
 
 		assertEquals(20.00, program.getPrice(), 0.001);
-	}
-
-	@Test
-	public void testKey() {
-		Program program2 = new Program("Example Program", "Andrew Meyer", 22.50);
-
-		PersistenceManager pm = getPersistenceManager();
-
-		pm.makePersistent(program);
-		pm.makePersistent(program2);
-
-		assertThat(program.getKey(), is(not(program2.getKey())));
-	}
-
-	private PersistenceManager getPersistenceManager()
-	{
-		return JDOHelper.getPersistenceManagerFactory("transactions-optional").getPersistenceManager();
 	}
 }
