@@ -40,6 +40,23 @@ public class Student {
 
 	//****************************************************
 
+	@Override
+	public boolean equals(Object other) {
+		if (other == null || !(other instanceof Student)) return false;
+		if (other == this) return true;
+
+		Student otherS = (Student) other;
+		if (!bothNullOrEqual(this.getKey(), otherS.getKey())) return false;
+		if (!bothNullOrEqual(this.firstName, otherS.firstName)) return false;
+		if (!bothNullOrEqual(this.lastName, otherS.lastName)) return false;
+		if (!bothNullOrEqual(this._email, otherS._email)) return false;
+
+		return true;
+	}
+	private boolean bothNullOrEqual(Object object1, Object object2) {
+		return (object1 == null ? object2 == null : object1.equals(object2));
+	}
+
 	public Key getKey() {
 		return this.key;
 	}
