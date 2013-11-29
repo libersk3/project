@@ -1,10 +1,11 @@
 package edu.uwm.cs361.fantastic_five.training_tracker.tests;
 
 import static org.junit.Assert.*;
-import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Program;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Program;
 
 public class ProgramTest {
 	Program program;
