@@ -2,24 +2,30 @@ package edu.uwm.cs361.fantastic_five.training_tracker.servlets;
 
 import java.io.IOException;
 
-import javax.jdo.PersistenceManager;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
-import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Program;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.ProgramViewer;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.requests.ViewProgramRequest;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.responses.ViewProgramResponse;
 
 @SuppressWarnings("serial")
 public class SingleProgramServlet extends BaseServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		PersistenceManager pm = getPersistenceManager();
+		ProgramViewer programViewer = new ProgramViewer();
 
-		String id = req.getParameter("id");
-		long idLong = Long.parseLong(id);
-		Program program = pm.getObjectById(Program.class, idLong);
+		ViewProgramRequest viewProgramReq = new ViewProgramRequest();
+		viewProgramReq.id = req.getParameter("id");
 
-		req.setAttribute("program", program);
-		if (program != null) req.setAttribute("students", program.listStudents());
+		ViewProgramResponse viewProgramResp = programViewer.viewProgram(viewProgramReq);
 
-		forwardToJsp("program.jsp", req, resp);
+		if (viewProgramResp.program != null) {
+			req.setAttribute("program", viewProgramResp.program);
+			req.setAttribute("students", viewProgramResp.students);
+
+			forwardToJsp("program.jsp", req, resp);
+		} else {
+			forwardToJsp("program_404.jsp", req, resp);
+		}
 	}
 }
