@@ -1,5 +1,6 @@
 package edu.uwm.cs361.fantastic_five.training_tracker.app.entities;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.jdo.annotations.IdGeneratorStrategy;
@@ -25,16 +26,32 @@ public class Program {
 
 	@Persistent
 	private double price;
+	
+	
+	@Persistent
+	private double discount;
+	
+	@Persistent
+	private boolean chooseTimes;
 
 	@Unowned
 	@Persistent
 	private Set<Student> students;
+	
+	
+	@Persistent
+	private List<time> times;
+	
+	
+	
 
-	public Program(String name, String instructor, double price)
+	public Program(String name, String instructor, double price, List<time> times)
 	{
 		this.name = name;
 		this.instructor = instructor;
 		this.price = price;
+		this.times= times;
+		
 	}
 
 	public Key getKey()
@@ -77,4 +94,21 @@ public class Program {
 	public Set<Student> listStudents(){
 		return students;
 	}
+	
+	public String getTimes(){
+		String timeOut = "";
+		for(time t: times){
+			//if(timeOut == null)timeOut = t.toString();
+			timeOut = (timeOut + "\n" + t.toString());
+		}
+		return timeOut;
+	}
+	
+	private class dates{
+		
+	}
+	
 }
+
+
+

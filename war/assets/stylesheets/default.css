@@ -210,6 +210,7 @@ footer {
 	font-size: 12pt;
 	margin: 0px;
 	padding: 10px;
+	//backround:#a5cd4e;
 	background: #ccc;
 	border-bottom: 1px solid #fff;
 	transition-property: background;
@@ -220,6 +221,7 @@ footer {
 .accordion li div.content{
 	display: none;
 	padding: 10px;
+	
 	background: #f9f9f9;
 	border: 1px solid #ddd;
 	transition-property: background;

@@ -12,7 +12,8 @@ public class ProgramCreator {
 		PersistenceManager pm = getPersistenceManager();
 
 		try {
-			pm.makePersistent(new Program(req.name, req.instructor, Double.parseDouble(req.price)));
+			pm.makePersistent(new Program(req.name, req.instructor, Double.parseDouble(req.price), req.dates));
+			
 		} finally {
 			pm.close();
 		}
