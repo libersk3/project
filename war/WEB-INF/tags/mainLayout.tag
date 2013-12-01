@@ -10,7 +10,7 @@
 </head>
 <body>
 	<header class="navbar">
-		<div class="brand"><a href="#">Fantastic Five Training Application Prototype</a></div>
+		<div class="brand"><a href="/homepage">Fantastic Five Training Application Prototype</a></div>
 		<nav>
 			<ul>
 				<li><a href="/programs">Programs</a></li>
