@@ -20,7 +20,7 @@ public class StudentCreator {
 		}
 
 		try {
-			pm.makePersistent(new Student(req.firstName, req.lastName, req.email));
+			pm.makePersistent(new Student(req.firstName, req.lastName, req.email, req.password));
 			resp.success = true;
 		} finally {
 			pm.close();

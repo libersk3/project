@@ -22,6 +22,9 @@ public class Student {
 
 	@Persistent
 	private String _email;
+	
+	@Persistent
+	private String _password;
 
 	@Persistent
 	private double balance;
@@ -30,11 +33,12 @@ public class Student {
 
 	//****************************************************
 
-	public Student(String firstName, String lastName, String _email) {
+	public Student(String firstName, String lastName, String _email, String _pass) {
 
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this._email = _email;
+		this._password = _pass;
 		balance = 0.0;
 	}
 
@@ -72,6 +76,10 @@ public class Student {
 	public String get_email(){
 		return this._email;
 	}
+	
+	public String getPassword() {
+		return this._password;
+	}
 
 	public String getFullName() {
 		return(this.firstName +" " + this.lastName);
@@ -85,6 +93,10 @@ public class Student {
 		this.lastName = newLastName;
 	}
 
+	public void setPassword(String p) {
+		this._password = p;
+	}
+	
 	public double getBalance(){
 		return balance;
 	}

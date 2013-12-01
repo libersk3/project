@@ -17,6 +17,9 @@
 		<label for='email'>email: </label>
 		<input type='text' id='email' name='email' value='${email}' />
 		<br>
+		<label for='password'>password: </label>
+		<input type='text' id='password' name='password' />
+		<br>
 		<input type='submit' value='Create Student' />
 	</form>
 </t:mainLayout>

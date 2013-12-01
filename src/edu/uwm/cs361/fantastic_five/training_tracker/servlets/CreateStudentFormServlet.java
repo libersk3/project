@@ -22,6 +22,7 @@ public class CreateStudentFormServlet extends BaseServlet {
 		createRequest.firstName = req.getParameter("firstName");
 		createRequest.lastName = req.getParameter("lastName");
 		createRequest.email = req.getParameter("email");
+		createRequest.password = req.getParameter("password");
 
 		CreateStudentResponse createResponse = new StudentCreator().createStudent(createRequest);
 
