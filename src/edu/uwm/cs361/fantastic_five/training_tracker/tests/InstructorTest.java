@@ -7,9 +7,6 @@ import static org.junit.Assert.*;
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 
-import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Program;
-import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Student;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,7 +15,9 @@ import com.google.appengine.tools.development.testing.LocalDatastoreServiceTestC
 import com.google.appengine.tools.development.testing.LocalServiceTestHelper;
 import com.google.appengine.tools.development.testing.LocalTaskQueueTestConfig;
 
-public class StudentTest {
+import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Instructor;
+
+public class InstructorTest {
 
 	private final LocalServiceTestHelper helper = new LocalServiceTestHelper(
 			new LocalTaskQueueTestConfig(), new LocalDatastoreServiceTestConfig());
@@ -33,84 +32,72 @@ public class StudentTest {
 		helper.tearDown();
 	}
 	
-	Student student;
-
+	Instructor instructor;
+	
 	@Before
 	public void setUpTest() {
-		this.student = new Student("George", "Washington", "gw@gmail.com", "mypass");
+		this.instructor = new Instructor("Abraham", "Lincoln", "coln267", "mypass");
 	}
 
 	@Test
 	public void testGetKey() {
-		Student student2 = new Student("George", "Washington", "gw@gmail.com", "mypass");
+		Instructor instructor2 = new Instructor("Abraham", "Lincoln", "coln267", "mypass");
 
 		PersistenceManager pm = getPersistenceManager();
 
-		pm.makePersistent(student);
-		pm.makePersistent(student2);
+		pm.makePersistent(instructor);
+		pm.makePersistent(instructor2);
 
-		assertThat(student.getKey(), is(not(student2.getKey())));			//prove each student has unique key
+		assertThat(instructor.getKey(), is(not(instructor2.getKey())));			//prove each instructor has unique key
 	}
 	
 	@Test
 	public void testGetFirstName() {
-		assertEquals("George", student.getFirstName() );
+		assertEquals("Abraham", instructor.getFirstName() );
 	}
 
 	@Test
 	public void testGetLastName() {
-		assertEquals("Washington", student.getLastName() );
+		assertEquals("Lincoln", instructor.getLastName() );
 	}
 	
 	@Test
 	public void testGetEmail() {
-		assertEquals("gw@gmail.com", student.getEmail());
+		assertEquals("coln267", instructor.getUsername());
 	}
 
 	@Test
 	public void testGetPassword() {
-		assertEquals("mypass", student.getPassword());
+		assertEquals("mypass", instructor.getPassword());
 	}
 	
 	@Test
 	public void testSetFirstName() {
-		student.setFirstName("Benjamin");
-		assertEquals("Benjamin", student.getFirstName() );
+		instructor.setFirstName("Benjamin");
+		assertEquals("Benjamin", instructor.getFirstName() );
 	}
 
 	@Test
 	public void testSetLastName() {
-		student.setLastName("Franklin");
-		assertEquals("Franklin", student.getLastName() );
+		instructor.setLastName("Franklin");
+		assertEquals("Franklin", instructor.getLastName() );
 	}
 	
 	@Test
-	public void testSetEmail() {
-		student.setEmail("al@gmail.com");
-		assertEquals("al@gmail.com", student.getEmail());
+	public void testSetUsername() {
+		instructor.setUsername("abester");
+		assertEquals("abester", instructor.getUsername());
 	}
 	
 	@Test
 	public void testSetPassword() {
-		student.setPassword("happy");
-		assertEquals("happy", student.getPassword());
-	}
-
-	@Test
-	public void testUpdateBalance() {
-		student.updateBalance(5.00);
-		assertEquals(5.00, student.getBalance(), .001);
-	}
-
-	@Test
-	public void testBalanceToString(){
-		student.updateBalance(5.00);
-		assertEquals("$5.00", student.balanceToString());
+		instructor.setPassword("happy");
+		assertEquals("happy", instructor.getPassword());
 	}
 	
 	private PersistenceManager getPersistenceManager()
 	{
 		return JDOHelper.getPersistenceManagerFactory("transactions-optional").getPersistenceManager();
 	}
-
-} // end class
+	
+} //end class
