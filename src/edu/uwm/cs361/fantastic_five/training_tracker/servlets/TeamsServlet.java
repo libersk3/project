@@ -5,9 +5,7 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
-import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.ProgramFinder;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.TeamFinder;
-import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.responses.ListProgramsResponse;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.responses.ListTeamResponse;
 
 @SuppressWarnings("serial")

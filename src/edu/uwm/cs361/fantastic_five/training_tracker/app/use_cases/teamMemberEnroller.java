@@ -1,4 +1,3 @@
-
 package edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases;
 
 import java.util.ArrayList;
@@ -28,7 +27,7 @@ public class teamMemberEnroller {
 			Query q = pm.newQuery(Student.class);
 			List<Student> allStudents = (List<Student>) q.execute();
 
-			long programId = Long.parseLong(req.teamId);
+			long teamId = Long.parseLong(req.teamId);
 			team team = pm.getObjectById(team.class, teamId);
 
 			ArrayList<Student> unenrolledStudents = new ArrayList<Student>(allStudents);
@@ -54,7 +53,7 @@ public class teamMemberEnroller {
 				resp.error = "No student selected";
 			} else {
 				long studentId = Long.parseLong(req.studentId);
-				long teamId = Long.parseLong(req.programId);
+				long teamId = Long.parseLong(req.teamId);
 
 				team team = pm.getObjectById(team.class, teamId);
 				Student student = pm.getObjectById(Student.class, studentId);

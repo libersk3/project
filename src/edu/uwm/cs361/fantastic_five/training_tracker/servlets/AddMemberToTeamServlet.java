@@ -12,7 +12,7 @@ import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.requests.List
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.requests.addTeamMemberRequest;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.responses.EnrollStudentResponse;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.responses.ListUnenrolledStudentsResponse;
-import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.responses.addTeamMember;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.responses.addTeamMemberResponse;
 
 	@SuppressWarnings("serial")
 	public class AddMemberToTeamServlet extends BaseServlet {
@@ -33,14 +33,14 @@ import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.responses.add
 			addTeamMemberRequest.studentId = req.getParameter("student");
 			addTeamMemberRequest.teamId = req.getParameter("id");
 
-			addTeamMember addTeamMemberResponse = new teamMemberEnroller().addTeamMember(addTeamMemberRequest);
+			addTeamMemberResponse addTeamMemberResponse = new teamMemberEnroller().addTeamMember(addTeamMemberRequest);
 
-			if (addTeamMember.success) {
+			if (addTeamMemberResponse.success) {
 				resp.sendRedirect("/programs");
 			} else {
 				resp.setContentType("text/html");
 
-				resp.getWriter().println("<h3>Error: " + addTeamMember.error + "</h3>");
+				resp.getWriter().println("<h3>Error: " + addTeamMemberResponse.error + "</h3>");
 				resp.getWriter().println("<form action='/programs'>");
 				resp.getWriter().println("<input type='submit' value='Back to Programs Page'>");
 				resp.getWriter().println("</form>");
@@ -50,4 +50,4 @@ import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.responses.add
 
 	
 	
-}
+

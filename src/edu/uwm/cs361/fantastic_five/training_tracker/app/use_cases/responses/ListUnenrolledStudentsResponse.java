@@ -7,8 +7,11 @@ import java.util.List;
 // data structures for students and programs. Everything just works.
 import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Program;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Student;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.team;
 
 public class ListUnenrolledStudentsResponse {
 	public Program program;
 	public List<Student> unenrolledStudents;
+	public team team;
+
 }

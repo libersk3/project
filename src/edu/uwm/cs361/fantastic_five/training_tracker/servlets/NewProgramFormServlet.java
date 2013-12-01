@@ -24,7 +24,9 @@ public class NewProgramFormServlet extends BaseServlet {
 		createRequest.name = req.getParameter("name");
 		createRequest.instructor = req.getParameter("instructor");
 		createRequest.price = req.getParameter("price");
-		boolean chooseDays = req.getParameter(" ");
+		boolean chooseDays;
+		if(req.getParameter("chooseDays").equals("yes"))chooseDays = true;
+		 
 		String days = req.getParameter("day");
 		String[] day_array = days.split(",");
 		List<time> datesAndTimes = new ArrayList<time>();

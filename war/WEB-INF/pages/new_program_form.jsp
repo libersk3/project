@@ -9,10 +9,12 @@
 		<label for='instructor'>Instructor name:</label>
 		<input type='text' id='instructor' name='instructor' />
 		<br>
+
 		<label for='price'>Price:</label>
-		<label for='discountPrice'>Discount Price:</label>
-		<label for='discountParams'>Discount parameters:</label>
 		<input type='text' id='price' name='price' />
+		<label for='discountPrice'>Discount Price:</label>
+		<input type='text' id='discountprice' name='discountPrice' />
+		
 		<br>
 		<ul class="accordion">
 		<li>
@@ -92,6 +94,7 @@
 		</div>
 		</li>
 		
+		<input type="checkbox" name="chooseDays" value="yes"> Allow students to choose days to attend?
 		<input type='submit' value='Create program' />
 	</form>
 

@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.time;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.ProgramCreator;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.TeamCreator;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.requests.CreateProgramRequest;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.requests.createTeamRequest;
 
 @SuppressWarnings("serial")
 public class CreateTeamServlet extends BaseServlet {
@@ -20,11 +22,11 @@ public class CreateTeamServlet extends BaseServlet {
 
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException
 	{
-		CreateTeamRequest createRequest = new CreateTeamRequest();
+		createTeamRequest createRequest = new createTeamRequest();
 		createRequest.name = req.getParameter("name");
 		createRequest.price = req.getParameter("price");
 		
-		new ProgramCreator().createProgram(createRequest);
+		new TeamCreator().createTeam(createRequest);
 
 		resp.sendRedirect("/programs");
 	}
