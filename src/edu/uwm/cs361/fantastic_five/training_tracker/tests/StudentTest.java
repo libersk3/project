@@ -64,7 +64,7 @@ public class StudentTest {
 	
 	@Test
 	public void testGetEmail() {
-		assertEquals("gw@gmail.com", student.getEmail());
+		assertEquals("gw@gmail.com", student.get_email());
 	}
 
 	@Test
@@ -87,7 +87,7 @@ public class StudentTest {
 	@Test
 	public void testSetEmail() {
 		student.setEmail("al@gmail.com");
-		assertEquals("al@gmail.com", student.getEmail());
+		assertEquals("al@gmail.com", student.get_email());
 	}
 	
 	@Test

@@ -26,9 +26,6 @@ public class Instructor {
 	@Persistent
 	private String _password;
 
-	@Persistent
-	private double balance;
-
 
 
 	//****************************************************
@@ -39,7 +36,6 @@ public class Instructor {
 		this.lastName = lastName;
 		this._username = _username;
 		this._password = _pass;
-		balance = 0.0;
 	}
 
 	//****************************************************

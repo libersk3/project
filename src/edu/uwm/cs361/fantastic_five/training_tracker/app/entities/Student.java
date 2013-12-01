@@ -73,7 +73,7 @@ public class Student {
 		return this.lastName;
 	}
 
-	public String getEmail(){
+	public String get_email(){
 		return this._email;
 	}
 	

@@ -3,6 +3,8 @@
 
 <t:mainLayout title="Homepage">
 <footer>
+		<a href='/instructors' class="button blue button-main">Instructors</a>
+		<br>
 		<a href='/programs' class="button green button-main">Programs</a>
 		<br>
 		<a href='/students' class="button blue button-main">Students</a>

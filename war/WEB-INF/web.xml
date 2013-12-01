@@ -42,6 +42,25 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>CreateStudentForm</servlet-name>
 		<url-pattern>/students/new</url-pattern>
 	</servlet-mapping>
+	
+	<!-- Instructors -->
+	<servlet>
+		<servlet-name>Instructors</servlet-name>
+		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.servlets.InstructorsServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Instructors</servlet-name>
+		<url-pattern>/instructors</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>CreateInstructorForm</servlet-name>
+		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.servlets.CreateInstructorFormServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CreateInstructorForm</servlet-name>
+		<url-pattern>/instructors/new</url-pattern>
+	</servlet-mapping>
 
 	<!-- Log-in -->
 	
