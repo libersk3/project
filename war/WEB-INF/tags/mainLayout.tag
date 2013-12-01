@@ -30,8 +30,6 @@
 	</article>
 </body>
 <footer>
-
-	<a href='/home' class="button green">back</a>
 	<a href='/homepage' class="button blue">home</a>
 	<a href='/login' class="button gray">logout</a>
 </footer>
