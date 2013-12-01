@@ -5,8 +5,8 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
-import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.StudentCreator;
-import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.requests.CreateStudentRequest;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.InstructorCreator;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.requests.CreateInstructorRequest;
 
 @SuppressWarnings("serial")
 public class CreateInstructorFormServlet extends BaseServlet {
@@ -17,13 +17,13 @@ public class CreateInstructorFormServlet extends BaseServlet {
 
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException
 	{
-		CreateStudentRequest createRequest = new CreateStudentRequest();
+		CreateInstructorRequest createRequest = new CreateInstructorRequest();
 		createRequest.firstName = req.getParameter("firstName");
 		createRequest.lastName = req.getParameter("lastName");
 		createRequest.username = req.getParameter("username");
 		createRequest.password = req.getParameter("password");
-
-		new StudentCreator().createStudent(createRequest);
+		
+		new InstructorCreator().createInstructor(createRequest);
 
 		resp.sendRedirect("/instructors");
 	}
