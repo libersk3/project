@@ -25,8 +25,19 @@ public class StudentEnroller {
 			Query q = pm.newQuery(Student.class);
 			List<Student> allStudents = (List<Student>) q.execute();
 
-			long programId = Long.parseLong(req.programId);
-			Program program = pm.getObjectById(Program.class, programId);
+			long programId;
+			try {
+				programId = Long.parseLong(req.programId);
+			} catch (NumberFormatException ex) {
+				return resp;
+			}
+
+			Program program;
+			try {
+				program = pm.getObjectById(Program.class, programId);
+			} catch (JDOObjectNotFoundException ex) {
+				return resp;
+			}
 
 			ArrayList<Student> unenrolledStudents = new ArrayList<Student>(allStudents);
 			unenrolledStudents.removeAll(program.listStudents());
