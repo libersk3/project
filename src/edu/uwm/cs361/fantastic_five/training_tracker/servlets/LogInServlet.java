@@ -6,7 +6,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.Authenticator;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.UserAuthenticator;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.requests.LogInRequest;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.responses.LogInResponse;
 
@@ -26,7 +26,7 @@ public class LogInServlet extends BaseServlet
 		logInRequest.username = req.getParameter("username");
 		logInRequest.password = req.getParameter("password");
 
-		LogInResponse logInResponse = new Authenticator().authenticate(logInRequest);
+		LogInResponse logInResponse = new UserAuthenticator().authenticate(logInRequest);
 
 		if (logInResponse.success) {
 			Cookie c = new Cookie("username",req.getParameter("username"));
