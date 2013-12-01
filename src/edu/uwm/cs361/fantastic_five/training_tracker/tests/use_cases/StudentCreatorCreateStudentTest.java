@@ -28,7 +28,7 @@ public class StudentCreatorCreateStudentTest extends AppEngineTest {
 	}
 
 	private void doRequest() {
-		studentCreator.createStudent(req);
+		resp = studentCreator.createStudent(req);
 	}
 
 	private void generateValidRequest() {
@@ -43,8 +43,8 @@ public class StudentCreatorCreateStudentTest extends AppEngineTest {
 
 		doRequest();
 
-		// assertTrue(resp.success);
-		// assertTrue(resp.errors.isEmpty());
+		assertTrue(resp.success);
+		assertTrue(resp.errors.isEmpty());
 	}
 
 	@SuppressWarnings("unchecked")
@@ -94,57 +94,64 @@ public class StudentCreatorCreateStudentTest extends AppEngineTest {
 	}
 
 	@Test
-	public void testCreateStudentWithBlankInstructor() {
-		generateValidRequest();
-		req.lastName = "";
-
-		doRequest();
-
-		// assertFalse(resp.success);
-		// assertFalse(resp.errors.isEmpty());
-	}
-
-	@Test
-	public void testCreateStudentWithBlankName() {
+	public void testCreateStudentWithBlankFirstName() {
 		generateValidRequest();
 		req.firstName = "";
 
 		doRequest();
 
-		// assertFalse(resp.success);
-		// assertFalse(resp.errors.isEmpty());
+		assertFalse(resp.success);
+		assertFalse(resp.errors.isEmpty());
+		assertNotNull(resp.errors.get("firstName"));
+		assertFalse(resp.errors.get("firstName").isEmpty());
 	}
 
-//  TODO: Make these tests pass
-//	@Test
-//	public void testInvalidStudentNotCreated() {
-//		generateValidRequest();
-//		req.firstName = "";
-//
-//		doRequest();
-//
-//		assertFalse(getAllStudents().iterator().hasNext());
-//	}
-//
-//	@Test
-//	public void testCreateStudentWithBlankEmail() {
-//		generateValidRequest();
-//		req.email = "";
-//
-//		doRequest();
-//
-//		// assertFalse(resp.success);
-//		// assertFalse(resp.errors.isEmpty());
-//	}
-//
-//	@Test
-//	public void testCreateStudentWithInvalidEmail() {
-//		generateValidRequest();
-//		req.email = "asdf";
-//
-//		doRequest();
-//
-//		// assertFalse(resp.success);
-//		// assertFalse(resp.errors.isEmpty());
-//	}
+	@Test
+	public void testCreateStudentWithBlankLastName() {
+		generateValidRequest();
+		req.lastName = "";
+
+		doRequest();
+
+		assertFalse(resp.success);
+		assertFalse(resp.errors.isEmpty());
+		assertNotNull(resp.errors.get("lastName"));
+		assertFalse(resp.errors.get("lastName").isEmpty());
+	}
+
+	@Test
+	public void testCreateStudentWithBlankEmail() {
+		generateValidRequest();
+		req.email = "";
+
+		doRequest();
+
+		assertFalse(resp.success);
+		assertFalse(resp.errors.isEmpty());
+		assertNotNull(resp.errors.get("email"));
+		assertFalse(resp.errors.get("email").isEmpty());
+	}
+
+	@Test
+	public void testCreateStudentWithInvalidEmail() {
+		generateValidRequest();
+		req.email = "asdf";
+
+		doRequest();
+
+		assertFalse(resp.success);
+		assertFalse(resp.errors.isEmpty());
+		assertNotNull(resp.errors.get("email"));
+		assertFalse(resp.errors.get("email").isEmpty());
+	}
+
+	@Test
+	public void testInvalidStudentNotCreated() {
+		generateValidRequest();
+		req.firstName = "";
+
+		doRequest();
+
+		assertFalse(getAllStudents().iterator().hasNext());
+	}
 }
