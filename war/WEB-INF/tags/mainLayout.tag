@@ -31,6 +31,6 @@
 </body>
 <footer>
 	<a href='/homepage' class="button blue">home</a>
-	<a href='/login' class="button gray">logout</a>
+	<a href='/logout' class="button gray">Logout</a>
 </footer>
 </html>
