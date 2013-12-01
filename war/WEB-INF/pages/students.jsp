@@ -4,24 +4,20 @@
 
 
 <t:mainLayout title="Students">
-<ul class="accordion">
+	<ul class="accordion">
 		<c:forEach items="${students}" var="student">
-
 			<li>
-			<h2><a href="students/single?id=${student.key.id}"> ${student.firstName}</a></h2>
-			<div class ="content">
-			${student._email}
-			<br/>
-			balance $
-			${student.balance}
-			</div>
+				<h2>${student.firstName}</h2>
+				<div class="content">
+					Email: ${student._email}
+					<br/>
+					Balance: ${student.balance}
+				</div>
 			</li>
 			<hr/>
 		</c:forEach>
-		</ul>
-		<footer>
+	</ul>
+	<footer>
 		<a href='students/new' class="button button-action blue">New Student</a>
-		</footer>
-		<br/>
-		<br/>
+	</footer>
 </t:mainLayout>

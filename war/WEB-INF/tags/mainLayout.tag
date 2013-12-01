@@ -10,7 +10,7 @@
 </head>
 <body>
 	<header class="navbar">
-		<div class="brand"><a href="#">Fantastic Five Training Application Prototype</a></div>
+		<div class="brand"><a href="/homepage">Fantastic Five Training Application Prototype</a></div>
 		<nav>
 			<ul>
 				<li><a href="/programs">Programs</a></li>
@@ -30,9 +30,7 @@
 	</article>
 </body>
 <footer>
-
-	<a href='/home' class="button green">back</a>
 	<a href='/homepage' class="button blue">home</a>
-	<a href='/login' class="button gray">logout</a>
+	<a href='/logout' class="button gray">Logout</a>
 </footer>
 </html>

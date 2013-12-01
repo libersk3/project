@@ -136,16 +136,25 @@ public class ProgramViewerTest extends AppEngineTest {
 		}
 	}
 
-//	TODO: Make this test pass
-//	@Test
-//	public void testViewNonexistent() {
-//		createProgramWithStudents();
-//		generateValidRequest();
-//		req.id = "12345";
-//		doRequest();
-//
-//		assertNull(resp.program);
-//		assertTrue(resp.students == null || resp.students.isEmpty());
-//	}
+	@Test
+	public void testViewNonexistent() {
+		createProgramWithStudents();
+		generateValidRequest();
+		req.id = "12345";
+		doRequest();
 
+		assertNull(resp.program);
+		assertTrue(resp.students == null || resp.students.isEmpty());
+	}
+
+	@Test
+	public void testViewInvalidID() {
+		createProgramWithStudents();
+		generateValidRequest();
+		req.id = "asdf@%*&";
+		doRequest();
+
+		assertNull(resp.program);
+		assertTrue(resp.students == null || resp.students.isEmpty());
+	}
 }

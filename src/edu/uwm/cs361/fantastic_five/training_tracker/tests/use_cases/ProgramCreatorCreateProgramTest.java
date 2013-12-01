@@ -27,7 +27,7 @@ public class ProgramCreatorCreateProgramTest extends AppEngineTest {
 	}
 
 	private void doRequest() {
-		programCreator.createProgram(req);
+		resp = programCreator.createProgram(req);
 	}
 
 	private void generateValidRequest() {
@@ -42,8 +42,8 @@ public class ProgramCreatorCreateProgramTest extends AppEngineTest {
 
 		doRequest();
 
-		// assertTrue(resp.success);
-		// assertTrue(resp.errors.isEmpty());
+		assertTrue(resp.success);
+		assertTrue(resp.errors.isEmpty());
 	}
 
 	@SuppressWarnings("unchecked")
@@ -99,8 +99,10 @@ public class ProgramCreatorCreateProgramTest extends AppEngineTest {
 
 		doRequest();
 
-		// assertFalse(resp.success);
-		// assertFalse(resp.errors.isEmpty());
+		assertFalse(resp.success);
+		assertFalse(resp.errors.isEmpty());
+		assertNotNull(resp.errors.get("instructor"));
+		assertFalse(resp.errors.get("instructor").isEmpty());
 	}
 
 	@Test
@@ -110,41 +112,46 @@ public class ProgramCreatorCreateProgramTest extends AppEngineTest {
 
 		doRequest();
 
-		// assertFalse(resp.success);
-		// assertFalse(resp.errors.isEmpty());
+		assertFalse(resp.success);
+		assertFalse(resp.errors.isEmpty());
+		assertNotNull(resp.errors.get("name"));
+		assertFalse(resp.errors.get("name").isEmpty());
 	}
 
-//  TODO: Make these tests pass
-//	@Test
-//	public void testInvalidProgramNotCreated() {
-//		generateValidRequest();
-//		req.name = "";
-//
-//		doRequest();
-//
-//		assertFalse(getAllPrograms().iterator().hasNext());
-//	}
-//
-//	@Test
-//	public void testCreateProgramWithBlankPrice() {
-//		generateValidRequest();
-//		req.price = "";
-//
-//		doRequest();
-//
-//		// assertFalse(resp.success);
-//		// assertFalse(resp.errors.isEmpty());
-//	}
-//
-//	@Test
-//	public void testCreateProgramWithInvalidPrice() {
-//		generateValidRequest();
-//		req.price = "asdf";
-//
-//		doRequest();
-//
-//		// assertFalse(resp.success);
-//		// assertFalse(resp.errors.isEmpty());
-//	}
+	@Test
+	public void testInvalidProgramNotCreated() {
+		generateValidRequest();
+		req.name = "";
+
+		doRequest();
+
+		assertFalse(getAllPrograms().iterator().hasNext());
+	}
+
+	@Test
+	public void testCreateProgramWithBlankPrice() {
+		generateValidRequest();
+		req.price = "";
+
+		doRequest();
+
+		assertFalse(resp.success);
+		assertFalse(resp.errors.isEmpty());
+		assertNotNull(resp.errors.get("price"));
+		assertFalse(resp.errors.get("price").isEmpty());
+	}
+
+	@Test
+	public void testCreateProgramWithInvalidPrice() {
+		generateValidRequest();
+		req.price = "asdf";
+
+		doRequest();
+
+		assertFalse(resp.success);
+		assertFalse(resp.errors.isEmpty());
+		assertNotNull(resp.errors.get("price"));
+		assertFalse(resp.errors.get("price").isEmpty());
+	}
 
 }

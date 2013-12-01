@@ -3,6 +3,7 @@ package edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.jdo.JDOObjectNotFoundException;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
@@ -24,8 +25,19 @@ public class StudentEnroller {
 			Query q = pm.newQuery(Student.class);
 			List<Student> allStudents = (List<Student>) q.execute();
 
-			long programId = Long.parseLong(req.programId);
-			Program program = pm.getObjectById(Program.class, programId);
+			long programId;
+			try {
+				programId = Long.parseLong(req.programId);
+			} catch (NumberFormatException ex) {
+				return resp;
+			}
+
+			Program program;
+			try {
+				program = pm.getObjectById(Program.class, programId);
+			} catch (JDOObjectNotFoundException ex) {
+				return resp;
+			}
 
 			ArrayList<Student> unenrolledStudents = new ArrayList<Student>(allStudents);
 			unenrolledStudents.removeAll(program.listStudents());
@@ -49,11 +61,45 @@ public class StudentEnroller {
 				resp.success = false;
 				resp.error = "No student selected";
 			} else {
-				long studentId = Long.parseLong(req.studentId);
-				long programId = Long.parseLong(req.programId);
+				long studentId;
+				long programId;
 
-				Program program = pm.getObjectById(Program.class, programId);
-				Student student = pm.getObjectById(Student.class, studentId);
+				try {
+					studentId = Long.parseLong(req.studentId);
+				} catch (NumberFormatException ex) {
+					resp.success = false;
+					resp.error = "Invalid student id.";
+
+					return resp;
+				}
+				try {
+					programId = Long.parseLong(req.programId);
+				} catch (NumberFormatException ex) {
+					resp.success = false;
+					resp.error = "Invalid program id.";
+
+					return resp;
+				}
+
+				Program program;
+				Student student;
+
+				try {
+					program = pm.getObjectById(Program.class, programId);
+				} catch (JDOObjectNotFoundException ex) {
+					resp.success = false;
+					resp.error = "The specified program does not exist.";
+
+					return resp;
+				}
+				try {
+					student = pm.getObjectById(Student.class, studentId);
+				} catch (JDOObjectNotFoundException ex) {
+					resp.success = false;
+					resp.error = "The specified student does not exist.";
+
+					return resp;
+				}
 
 				program.addStudent(student);
 

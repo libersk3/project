@@ -4,16 +4,16 @@
 
 
 <t:mainLayout title="Enroll Student">
+	<h1>Enroll Student in ${program.name}:</h1>
+	
 	<form class='well' action='' method='POST'>
-
 		<c:if test='${not empty program}'>
-
-			<h1> Enroll Student in ${program.name}:</h1>
 			<form action='' method = 'POST'>
 				<c:forEach items="${StudentsList}" var="student">
-					<br><input type='radio' name='student' value='${student.key.id}'/> '${student.firstName} '${student.lastName}
+					<input type='radio' name='student' value='${student.key.id}'/> ${student.fullName}
+					<br/>
 				</c:forEach>
-					<br><input type='submit' value='Enroll Student'>
+				<input type='submit' value='Enroll Student'>
 			</form>
 		</c:if>
 </t:mainLayout>

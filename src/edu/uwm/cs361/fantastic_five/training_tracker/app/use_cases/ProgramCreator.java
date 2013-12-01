@@ -6,18 +6,28 @@ import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.requests.Crea
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.responses.CreateProgramResponse;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Program;
 import edu.uwm.cs361.fantastic_five.training_tracker.services.PersistenceService;
+import edu.uwm.cs361.fantastic_five.training_tracker.services.ProgramValidator;
 
 public class ProgramCreator {
 	public CreateProgramResponse createProgram(CreateProgramRequest req) {
 		PersistenceManager pm = getPersistenceManager();
+		CreateProgramResponse resp = new CreateProgramResponse();
+
+		resp.errors = new ProgramValidator().validate(req.name, req.instructor, req.price);
+
+		if (!resp.errors.isEmpty()) {
+			resp.success = false;
+			return resp;
+		}
 
 		try {
 			pm.makePersistent(new Program(req.name, req.instructor, Double.parseDouble(req.price)));
+			resp.success = true;
 		} finally {
 			pm.close();
 		}
 
-		return new CreateProgramResponse();
+		return resp;
 	}
 
 	private PersistenceManager getPersistenceManager()

@@ -147,4 +147,31 @@ public class StudentEnrollerListUnenrolledStudentsTest extends AppEngineTest {
 			assertThat(resp.unenrolledStudents, not(hasItem(enrolledStudent)));
 		}
 	}
+
+	@Test
+	public void testBlankProgramId() {
+		req.programId = "";
+		doRequest();
+
+		assertNull(resp.program);
+		assertTrue(resp.unenrolledStudents == null || resp.unenrolledStudents.isEmpty());
+	}
+
+	@Test
+	public void testInvalidProgramId() {
+		req.programId = "asdf";
+		doRequest();
+
+		assertNull(resp.program);
+		assertTrue(resp.unenrolledStudents == null || resp.unenrolledStudents.isEmpty());
+	}
+
+	@Test
+	public void testNonexistantProgramId() {
+		req.programId = "12345";
+		doRequest();
+
+		assertNull(resp.program);
+		assertTrue(resp.unenrolledStudents == null || resp.unenrolledStudents.isEmpty());
+	}
 }
