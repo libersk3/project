@@ -142,80 +142,79 @@ public class StudentEnrollerEnrollStudentTest extends AppEngineTest {
 		}
 	}
 
-//	TODO: Make these tests pass
-//	@Test
-//	public void testEnrollBlankProgramIdFail() {
-//		generateValidRequest();
-//		req.programId = "";
-//		doRequest();
-//
-//		assertFalse(resp.success);
-//	}
-//
-//	@Test
-//	public void testEnrollBlankProgramIdError() {
-//		generateValidRequest();
-//		req.programId = "";
-//		doRequest();
-//
-//		assertNotNull(resp.error);
-//		assertFalse(resp.error.isEmpty());
-//	}
-//
-//	@Test
-//	public void testEnrollInvalidProgramIdFail() {
-//		generateValidRequest();
-//		req.programId = "12345";
-//		doRequest();
-//
-//		assertFalse(resp.success);
-//	}
-//
-//	@Test
-//	public void testEnrollInvalidProgramIdError() {
-//		generateValidRequest();
-//		req.programId = "12345";
-//		doRequest();
-//
-//		assertNotNull(resp.error);
-//		assertFalse(resp.error.isEmpty());
-//	}
-//
-//	@Test
-//	public void testEnrollBlankStudentIdFail() {
-//		generateValidRequest();
-//		req.studentId = "";
-//		doRequest();
-//
-//		assertFalse(resp.success);
-//	}
-//
-//	@Test
-//	public void testEnrollBlankStudentIdError() {
-//		generateValidRequest();
-//		req.studentId = "";
-//		doRequest();
-//
-//		assertNotNull(resp.error);
-//		assertFalse(resp.error.isEmpty());
-//	}
-//
-//	@Test
-//	public void testEnrollInvalidStudentIdFail() {
-//		generateValidRequest();
-//		req.studentId = "12345";
-//		doRequest();
-//
-//		assertFalse(resp.success);
-//	}
-//
-//	@Test
-//	public void testEnrollInvalidStudentIdError() {
-//		generateValidRequest();
-//		req.studentId = "12345";
-//		doRequest();
-//
-//		assertNotNull(resp.error);
-//		assertFalse(resp.error.isEmpty());
-//	}
+	@Test
+	public void testEnrollBlankProgramIdFail() {
+		generateValidRequest();
+		req.programId = "";
+		doRequest();
+
+		assertFalse(resp.success);
+	}
+
+	@Test
+	public void testEnrollBlankProgramIdError() {
+		generateValidRequest();
+		req.programId = "";
+		doRequest();
+
+		assertNotNull(resp.error);
+		assertFalse(resp.error.isEmpty());
+	}
+
+	@Test
+	public void testEnrollNonexistantProgramIdFail() {
+		generateValidRequest();
+		req.programId = "12345";
+		doRequest();
+
+		assertFalse(resp.success);
+	}
+
+	@Test
+	public void testEnrollNonexistantProgramIdError() {
+		generateValidRequest();
+		req.programId = "12345";
+		doRequest();
+
+		assertNotNull(resp.error);
+		assertFalse(resp.error.isEmpty());
+	}
+
+	@Test
+	public void testEnrollBlankStudentIdFail() {
+		generateValidRequest();
+		req.studentId = "";
+		doRequest();
+
+		assertFalse(resp.success);
+	}
+
+	@Test
+	public void testEnrollBlankStudentIdError() {
+		generateValidRequest();
+		req.studentId = "";
+		doRequest();
+
+		assertNotNull(resp.error);
+		assertFalse(resp.error.isEmpty());
+	}
+
+	@Test
+	public void testEnrollNonexistantStudentIdFail() {
+		generateValidRequest();
+		req.studentId = "12345";
+		doRequest();
+
+		assertFalse(resp.success);
+	}
+
+	@Test
+	public void testEnrollNonexistantStudentIdError() {
+		generateValidRequest();
+		req.studentId = "12345";
+		doRequest();
+
+		assertNotNull(resp.error);
+		assertFalse(resp.error.isEmpty());
+	}
 }
