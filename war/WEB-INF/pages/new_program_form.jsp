@@ -12,7 +12,7 @@
 
 		<label for='price'>Price:</label>
 		<input type='text' id='price' name='price' />
-		<label for='discountPrice'>Discount Price:</label>
+		<label for='discountPrice'>Family Price:</label>
 		<input type='text' id='discountprice' name='discountPrice' />
 		
 		<br>
