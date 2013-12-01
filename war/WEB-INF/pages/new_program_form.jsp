@@ -3,18 +3,9 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <t:mainLayout title="New Program">
-	<c:if test="${not empty errors}">
-		<div class="error-message">
-			<h2>Errors occurred while attempting to create a new program!</h2>
-			<ul>
-				<c:forEach var="errorType" items="${errors}">
-					<c:forEach var="errorMessage" items="${errorType.value}">
-						<li>${errorMessage}</li>
-					</c:forEach>
-				</c:forEach>
-			</ul>
-		</div>
-	</c:if>
+	<t:validationErrors errors="${errors}">
+		<h2>Errors occurred while attempting to create a new program!</h2>
+	</t:validationErrors>
 
 	<form class='well' action='' method='POST'>
 		<label for='name'>Program name:</label>
