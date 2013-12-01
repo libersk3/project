@@ -31,4 +31,4 @@ public class StudentAuthenticator extends Authenticator {
 		return resp;
 	}
 	
-}
+} //end class

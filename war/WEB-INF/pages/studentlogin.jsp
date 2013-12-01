@@ -4,7 +4,7 @@
 
 
 <t:mainLayout title="Log In">
-	<h1>Student Log In</h1>
+	<h1>Student Login</h1>
 	<c:if test="${not empty error}">
 		<div class="error-message">**Username or password is incorrect**</div>
 	</c:if>

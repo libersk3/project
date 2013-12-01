@@ -44,6 +44,25 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	</servlet-mapping>
 
 	<!-- Log-in -->
+	
+	<servlet>
+		<servlet-name>InstructorLogin</servlet-name>
+		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.servlets.InstructorLoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>InstructorLogin</servlet-name>
+		<url-pattern>/instructorlogin</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>InstructorHomepage</servlet-name>
+		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.servlets.InstructorHomepageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>InstructorHomepage</servlet-name>
+		<url-pattern>/instructorhomepage</url-pattern>
+	</servlet-mapping>
+	
 	<servlet>
 		<servlet-name>StudentLogin</servlet-name>
 		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.servlets.StudentLoginServlet</servlet-class>
@@ -109,6 +128,16 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	</servlet-mapping>
 
 	<!-- CookieHelperServlets -->
+	
+	<servlet>
+		<servlet-name>Instructor</servlet-name>
+		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.servlets.InstructorServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Instructor</servlet-name>
+		<url-pattern>/instructor</url-pattern>
+	</servlet-mapping>
+	
 	<servlet>
 		<servlet-name>Student</servlet-name>
 		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.servlets.StudentServlet</servlet-class>
@@ -117,6 +146,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>Student</servlet-name>
 		<url-pattern>/student</url-pattern>
 	</servlet-mapping>
+	
 	<servlet>
 		<servlet-name>User</servlet-name>
 		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.servlets.UserServlet</servlet-class>
