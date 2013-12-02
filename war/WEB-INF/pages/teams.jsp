@@ -10,7 +10,7 @@
 			<li>
 			<h2><a href="teams/single?id=${team.key.id}">${team.name}</a></h2>
 			<div class ="content">
-			<c: forEach items="${student}" var="student">
+			<c:forEach items="${student}" var="student">
 				${student.firstName}
 			</c:forEach>
 			<br/>
