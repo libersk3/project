@@ -5,20 +5,19 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.Authenticator;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.UserAuthenticator;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.requests.LogInRequest;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.responses.LogInResponse;
-
 import edu.uwm.cs361.fantastic_five.training_tracker.tests.AppEngineTest;
 
-public class AuthenticatorAuthenticateTest extends AppEngineTest {
-	private Authenticator authenticator;
+public class UserAuthenticatorAuthenticateTest extends AppEngineTest {
+	private UserAuthenticator authenticator;
 	private LogInRequest req;
 	private LogInResponse resp;
 
 	@Before
 	public void setUp() {
-		authenticator = new Authenticator();
+		authenticator = new UserAuthenticator();
 		req = new LogInRequest();
 	}
 
