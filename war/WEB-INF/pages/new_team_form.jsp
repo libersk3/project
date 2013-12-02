@@ -12,7 +12,7 @@
 		
 		
 		
-		<input type='submit' value='Create program' />
+		<input type='submit' value='Create team' />
 	</form>
 
 
