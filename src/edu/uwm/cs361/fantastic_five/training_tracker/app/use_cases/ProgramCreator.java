@@ -21,7 +21,7 @@ public class ProgramCreator {
 		}
 
 		try {
-			pm.makePersistent(new Program(req.name, req.instructor, Double.parseDouble(req.price)));
+			pm.makePersistent(new Program(req.name, req.instructor, Double.parseDouble(req.price), req.dates));
 			resp.success = true;
 		} finally {
 			pm.close();
