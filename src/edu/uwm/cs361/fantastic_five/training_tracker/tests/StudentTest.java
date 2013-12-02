@@ -7,7 +7,6 @@ import static org.junit.Assert.*;
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 
-import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Program;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Student;
 
 import org.junit.After;

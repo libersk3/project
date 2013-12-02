@@ -2,12 +2,6 @@ package edu.uwm.cs361.fantastic_five.training_tracker.tests;
 
 import static org.junit.Assert.*;
 
-import javax.jdo.JDOHelper;
-import javax.jdo.PersistenceManager;
-
-import static org.hamcrest.CoreMatchers.*;
-
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
