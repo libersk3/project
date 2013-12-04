@@ -43,13 +43,11 @@ public class Program {
 	private List<time> times;
 	
 	
-	public Program(String name, String instructor, double price)//, List<time> times)
+	public Program(String name, String instructor, double price)
 	{
 		this.name = name;
 		this.instructor = instructor;
-		this.price = price;
-		//this.times= times;
-		
+		this.price = price;		
 	}
 
 	public Program(String name, String instructor, double price, List<time> times)
@@ -103,12 +101,7 @@ public class Program {
 	}
 	
 	public List<time> getTimes(){
-		//String timeOut = "";
-		//for(time t: times){
-			//if(timeOut == null)timeOut = t.toString();
-		//	timeOut = (timeOut + "\n" + t.toString());
-		//}
-		//return timeOut;
+
 		return times;
 	}
 	
