@@ -12,14 +12,12 @@
 			<div class ="content">${program.instructor}
 			<br/>
 			${program.price}
-			
-			<c:if test = "${progam.times}">
-				<c:forEach items = "${program.times}" var="time">
-				
+			<c:if test="${not empty program.times}">
+				<c:forEach items= "${program.times}" var="time">
+					<br/>
 					${time.day}
+					${time._times}
 					
-					</div>
-					</li>
 					<hr/>
 				</c:forEach>
 			</c:if>

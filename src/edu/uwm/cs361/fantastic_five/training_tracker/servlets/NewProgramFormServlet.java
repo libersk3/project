@@ -27,15 +27,17 @@ public class NewProgramFormServlet extends BaseServlet {
 		createRequest.price = req.getParameter("price");
 
 		boolean chooseDays;
-		if(req.getParameter("chooseDays").equals("yes"))chooseDays = true;
+		if(req.getParameter("chooseDays") != null && req.getParameter("chooseDays").equals("yes"))chooseDays = true;
+		
 
-		String days = req.getParameter("day");
-		String[] day_array = days.split(",");
+		String[] day_array = req.getParameterValues("day");
+		//String[] day_array = days.split(",");
 		List<time> datesAndTimes = new ArrayList<time>();
 		for(String s:day_array){
-			//if(s.equals("sun")){
+			if(s.equals("sun")){
 				datesAndTimes.add(new time("Sunday",req.getParameter("sun_start"), req.getParameter("mon_end")));
-			if(s.equals("mon")){
+			}
+			else if(s.equals("mon")){
 				datesAndTimes.add(new time("Monday",req.getParameter("mon_start"), req.getParameter("mon_end")));
 			}else if(s.equals("tue")){
 				datesAndTimes.add(new time("Tuesday",req.getParameter("tue_start"), req.getParameter("tue_end")));
