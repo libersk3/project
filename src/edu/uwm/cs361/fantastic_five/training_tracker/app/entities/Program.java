@@ -7,9 +7,9 @@ import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
+import com.google.appengine.datanucleus.annotations.Unowned;
 
 import com.google.appengine.api.datastore.Key;
-import com.google.appengine.datanucleus.annotations.Unowned;
 
 @PersistenceCapable
 public class Program {
@@ -102,13 +102,14 @@ public class Program {
 		return students;
 	}
 	
-	public String getTimes(){
-		String timeOut = "";
-		for(time t: times){
+	public List<time> getTimes(){
+		//String timeOut = "";
+		//for(time t: times){
 			//if(timeOut == null)timeOut = t.toString();
-			timeOut = (timeOut + "\n" + t.toString());
-		}
-		return timeOut;
+		//	timeOut = (timeOut + "\n" + t.toString());
+		//}
+		//return timeOut;
+		return times;
 	}
 	
 	private class dates{
