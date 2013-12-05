@@ -33,7 +33,7 @@ public class ProgramViewer {
 			return resp;
 		}
 
-		if (program != null) resp.students = program.listStudents();
+		if (program != null) resp.students = program.getStudents();
 
 		return resp;
 	}
