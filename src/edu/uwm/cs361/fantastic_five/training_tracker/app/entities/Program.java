@@ -58,6 +58,10 @@ public class Program {
 		this.times= times;
 		
 	}
+	
+	public boolean getchooseTimes(){
+		return chooseTimes;
+	}
 
 	public Key getKey()
 	{
@@ -101,7 +105,6 @@ public class Program {
 	}
 	
 	public List<time> getTimes(){
-
 		return times;
 	}
 	

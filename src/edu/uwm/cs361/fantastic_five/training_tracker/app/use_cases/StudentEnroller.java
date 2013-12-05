@@ -38,6 +38,10 @@ public class StudentEnroller {
 			} catch (JDOObjectNotFoundException ex) {
 				return resp;
 			}
+			
+			// Quick hack: Pre-load times so that they're there when the view
+			// tries to access them.
+			program.getTimes();
 
 			ArrayList<Student> unenrolledStudents = new ArrayList<Student>(allStudents);
 			unenrolledStudents.removeAll(program.listStudents());
