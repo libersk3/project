@@ -249,6 +249,25 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>InstructorAttendanceView</servlet-name>
 		<url-pattern>/attendance/instructorview</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>StudentPrograms</servlet-name>
+		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.servlets.StudentProgramsServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>StudentPrograms</servlet-name>
+		<url-pattern>/programs/student</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>StudentAttendance</servlet-name>
+		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.servlets.StudentAttendanceServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>StudentAttendance</servlet-name>
+		<url-pattern>/attendance/student</url-pattern>
+	</servlet-mapping>
+	
 	<!-- index -->
 	<welcome-file-list>
 		<welcome-file>homepage</welcome-file>

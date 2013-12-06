@@ -102,7 +102,7 @@ public class StudentEnroller {
 				}
 
 				program.addStudent(student);
-
+				student.addProgram(program);
 				resp.success = true;
 			}
 		} finally {
