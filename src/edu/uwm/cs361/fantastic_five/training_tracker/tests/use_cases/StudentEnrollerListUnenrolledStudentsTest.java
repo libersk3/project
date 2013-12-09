@@ -142,7 +142,7 @@ public class StudentEnrollerListUnenrolledStudentsTest extends AppEngineTest {
 		generateValidRequest();
 		doRequest();
 
-		Set<Student> enrolledStudents = program.listStudents();
+		Set<Student> enrolledStudents = program.getStudents();
 		for (Student enrolledStudent : enrolledStudents) {
 			assertThat(resp.unenrolledStudents, not(hasItem(enrolledStudent)));
 		}

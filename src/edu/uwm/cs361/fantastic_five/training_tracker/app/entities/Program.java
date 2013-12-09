@@ -38,6 +38,9 @@ public class Program {
 	@Persistent
 	private Set<Student> students;
 	
+	@Unowned
+	@Persistent
+	private Set<Session> sessions;
 	
 	@Persistent
 	private List<time> times;
@@ -96,13 +99,20 @@ public class Program {
 	public void addStudent(Student student){
 		students.add(student);
 	}
-	public Set<Student> listStudents(){
+	public Set<Student> getStudents(){
 		return students;
 	}
 	
 	public List<time> getTimes(){
 
 		return times;
+	}
+	
+	public void addSession(Session session){
+		sessions.add(session);
+	}
+	public Set<Session> getSessions(){
+		return sessions;
 	}
 	
 	private class dates{

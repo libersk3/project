@@ -40,7 +40,7 @@ public class StudentEnroller {
 			}
 
 			ArrayList<Student> unenrolledStudents = new ArrayList<Student>(allStudents);
-			unenrolledStudents.removeAll(program.listStudents());
+			unenrolledStudents.removeAll(program.getStudents());
 
 			resp.program = program;
 			resp.unenrolledStudents = unenrolledStudents;
@@ -102,7 +102,7 @@ public class StudentEnroller {
 				}
 
 				program.addStudent(student);
-
+				student.addProgram(program);
 				resp.success = true;
 			}
 		} finally {

@@ -1,11 +1,14 @@
 package edu.uwm.cs361.fantastic_five.training_tracker.app.entities;
 
+import java.util.Set;
+
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
 import com.google.appengine.api.datastore.Key;
+import com.google.appengine.datanucleus.annotations.Unowned;
 
 @PersistenceCapable
 public class Student {
@@ -29,7 +32,9 @@ public class Student {
 	@Persistent
 	private double balance;
 
-
+	@Unowned
+	@Persistent
+	private Set<Program> programs;
 
 	//****************************************************
 
@@ -111,6 +116,13 @@ public class Student {
 
 	public void updateBalance(double price){
 		balance+=price;
+	}
+	
+	public void addProgram(Program program){
+		programs.add(program);
+	}
+	public Set<Program> getPrograms() {
+		return programs;
 	}
 
 } //end class
