@@ -27,7 +27,6 @@ public class Program {
 	@Persistent
 	private double price;
 	
-	
 	@Persistent
 	private double discount;
 	

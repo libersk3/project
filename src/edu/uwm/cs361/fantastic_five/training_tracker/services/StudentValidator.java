@@ -7,6 +7,9 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.AccountFinder;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.responses.ListAccountsResponse;
+
 public class StudentValidator {
 	private Map<String, List<String>> errors;
 
@@ -15,13 +18,15 @@ public class StudentValidator {
 			"^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
 			+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 
-	public Map<String, List<String>> validate(String firstName, String lastName, String email) {
+	public Map<String, List<String>> validate(String firstName, String lastName, String DOB, String email, boolean primary) {
 		errors = new HashMap<String, List<String>>();
 
 		validateFirstName(firstName);
 		validateLastName(lastName);
+		validateDOB(DOB);
 		validateEmail(email);
-
+		validatePrimary(primary);
+		
 		return errors;
 	}
 
@@ -44,7 +49,32 @@ public class StudentValidator {
 
 		if (!nameErrors.isEmpty()) errors.put("lastName", nameErrors);
 	}
-
+	
+	private void validateDOB(String DOB) {
+		List<String> dobErrors = new ArrayList<String>();
+		
+		int i;
+		boolean err = false;
+		for (i=0; i<10 && i<DOB.length() && !err; ++i)
+		{
+			if (i == 2 || i == 5) {
+				if (DOB.charAt(i) != '/')
+					err = true;
+			}
+			else
+				if (!Character.isDigit(DOB.charAt(i)))
+					err = true;
+		}
+		if (i < 10)
+			err = true;
+		
+		if (err == true) {
+			dobErrors.add("DOB format is not correct; should be MM/DD/YYYY");
+		}
+		
+		if (!dobErrors.isEmpty()) errors.put("dob",dobErrors);
+	}
+	
 	private void validateEmail(String email) {
 		List<String> emailErrors = new ArrayList<String>();
 
@@ -62,5 +92,17 @@ public class StudentValidator {
 		Pattern pattern = Pattern.compile(EMAIL_PATTERN);
 		Matcher matcher = pattern.matcher(email);
 		return matcher.matches();
+	}
+	
+	private void validatePrimary(boolean primary) {
+		List<String> primaryErrors = new ArrayList<String>();
+		
+		if (!primary) {
+			ListAccountsResponse resp = new AccountFinder().listAccounts();
+			if (resp.accounts.size() == 0)
+				primaryErrors.add("No available account holders.");
+		}
+		
+		if (!primaryErrors.isEmpty()) errors.put("primary", primaryErrors);
 	}
 }

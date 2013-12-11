@@ -16,12 +16,12 @@ public class AppEngineStudentTest extends AppEngineTest {
 
 	@Before
 	public void setUpTest() {
-		this.student = new Student("George", "Washington", "gw@gmail.com", "test_password");
+		this.student = new Student("George", "Washington", "11/11/1911","gw@gmail.com", "test_password", true);
 	}
 
 	@Test
 	public void testKey() {
-		Student student2 = new Student("George", "Washington", "gw@gmail.com", "test_password");
+		Student student2 = new Student("George", "Washington", "11/11/1911", "gw@gmail.com", "test_password", true);
 
 		PersistenceManager pm = getPersistenceManager();
 

@@ -22,29 +22,33 @@ public class Student {
 
 	@Persistent
 	private String lastName;
-
+	
+	@Persistent
+	private String DOB;
+	
 	@Persistent
 	private String _email;
 	
 	@Persistent
 	private String _password;
-
+	
 	@Persistent
-	private double balance;
-
+	private boolean primary;
+	
 	@Unowned
 	@Persistent
 	private Set<Program> programs;
 
 	//****************************************************
 
-	public Student(String firstName, String lastName, String _email, String _pass) {
+	public Student(String firstName, String lastName, String DOB, String _email, String _pass, boolean primary) {
 
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.DOB = DOB;
 		this._email = _email;
 		this._password = _pass;
-		balance = 0.0;
+		this.primary = primary;
 	}
 
 	//****************************************************
@@ -105,17 +109,9 @@ public class Student {
 	public void setPassword(String p) {
 		this._password = p;
 	}
-	
-	public double getBalance(){
-		return balance;
-	}
 
-	public String balanceToString(){
-		return String.format("$%.2f", new Double(balance));
-	}
-
-	public void updateBalance(double price){
-		balance+=price;
+	public String getDOB() {
+		return DOB;
 	}
 	
 	public void addProgram(Program program){
@@ -125,4 +121,8 @@ public class Student {
 		return programs;
 	}
 
+	public boolean isPrimary() {
+		return primary;
+	}
+	
 } //end class
