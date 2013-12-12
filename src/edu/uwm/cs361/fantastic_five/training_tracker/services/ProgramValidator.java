@@ -5,10 +5,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Instructor;
+
 public class ProgramValidator {
 	private Map<String, List<String>> errors;
 
-	public Map<String, List<String>> validate(String name, String instructor, String price) {
+	public Map<String, List<String>> validate(String name, Instructor instructor, String price) {
 		errors = new HashMap<String, List<String>>();
 
 		validateName(name);
@@ -28,12 +30,11 @@ public class ProgramValidator {
 		if (!nameErrors.isEmpty()) errors.put("name", nameErrors);
 	}
 
-	private void validateInstructor(String instructor) {
+	private void validateInstructor(Instructor instructor) {
 		List<String> instructorErrors = new ArrayList<String>();
 
-		if (instructor == null || instructor.isEmpty()) {
-			instructorErrors.add("Instructor must not be blank.");
-		}
+		if (instructor == null)
+			instructorErrors.add("Invalid instructor");
 
 		if (!instructorErrors.isEmpty()) errors.put("instructor", instructorErrors);
 	}

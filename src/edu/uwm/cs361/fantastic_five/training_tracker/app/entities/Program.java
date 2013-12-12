@@ -21,8 +21,9 @@ public class Program {
 	@Persistent
 	private String name;
 
+	@Unowned
 	@Persistent
-	private String instructor;
+	private Instructor instructor;
 
 	@Persistent
 	private double price;
@@ -45,14 +46,14 @@ public class Program {
 	private List<time> times;
 	
 	
-	public Program(String name, String instructor, double price)
+	public Program(String name, Instructor instructor, double price)
 	{
 		this.name = name;
 		this.instructor = instructor;
 		this.price = price;		
 	}
 
-	public Program(String name, String instructor, double price, List<time> times)
+	public Program(String name, Instructor instructor, double price, List<time> times)
 	{
 		this.name = name;
 		this.instructor = instructor;
@@ -75,11 +76,11 @@ public class Program {
 		this.name = name;
 	}
 
-	public String getInstructor()
+	public Instructor getInstructor()
 	{
 		return instructor;
 	}
-	public void setInstructor(String instructor)
+	public void setInstructor(Instructor instructor)
 	{
 		this.instructor = instructor;
 	}

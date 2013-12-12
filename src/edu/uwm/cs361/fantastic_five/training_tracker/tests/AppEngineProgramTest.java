@@ -9,19 +9,22 @@ import javax.jdo.PersistenceManager;
 import org.junit.Before;
 import org.junit.Test;
 
+import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Instructor;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Program;
 
 public class AppEngineProgramTest extends AppEngineTest {
 	Program program;
-
+	Instructor instructor;
+	
 	@Before
 	public void setUpTests() {
-		this.program = new Program("Example Program", "Andrew Meyer", 22.50);
+		this.instructor = new Instructor("Andrew", "Meyer", "andrew", "password");
+		this.program = new Program("Example Program", instructor, 22.50);
 	}
 
 	@Test
 	public void testKey() {
-		Program program2 = new Program("Example Program", "Andrew Meyer", 22.50);
+		Program program2 = new Program("Example Program", instructor, 22.50);
 
 		PersistenceManager pm = getPersistenceManager();
 

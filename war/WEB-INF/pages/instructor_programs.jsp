@@ -7,10 +7,10 @@
 		<ul class="accordion">
 		<c:forEach items="${programs}" var="program">
 			<li>
-			<h2><a href="/programs/single?id=${program.key.id}">${program.name}</a></h2>
-			<a href="/attendance?id=${program.key.id}">Take Attendance</a>
-			<a href="/attendance/instructorview?id=${program.key.id}">View Attendance</a>
-			<div class ="content">${program.instructor}
+			<h2>
+				<a href="/programs/single?id=${program.key.id}">${program.name}</a>
+			</h2>
+			<div class ="content">${program.instructor.fullName}
 			<br/>
 			${program.price}
 			<c:if test="${not empty program.times}">
@@ -21,6 +21,8 @@
 					<hr/>
 				</c:forEach>
 			</c:if>
+			<center><a href="/attendance?id=${program.key.id}" class='button blue'>Take Attendance</a>	
+			<a href="/attendance/instructorview?id=${program.key.id}" class='button green'>View Attendance</a></center>
 		</c:forEach>
 		</ul>
 		<br/>

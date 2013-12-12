@@ -11,10 +11,16 @@
 		<label for='name'>Program name:</label>
 		<input type='text' id='name' name='name' value='${name}' />
 		<br>
-		<label for='instructor'>Instructor name:</label>
-		<input type='text' id='instructor' name='instructor' value='${instructor}' />
 		<br>
-
+		
+		<label for='instructor'>Instructor:</label>
+		<select name='instructor'>
+		<c:forEach items="${instructors}" var="instructor">
+			<option id='instructor' name='instructor' value='${instructor.key.id}'> ${instructor.fullName} </option>
+		</c:forEach>
+		</select>
+		<br>
+		<br>
 		<label for='price'>Price:</label>
 		<input type='text' id='price' name='price' value='${price}' />
 		<label for='discountPrice'>Family Price:</label>
