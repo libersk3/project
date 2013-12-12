@@ -5,14 +5,17 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Instructor;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Program;
 
 public class ProgramTest {
 	Program program;
-
+	Instructor instructor;
+	
 	@Before
 	public void setUpTests() {
-		this.program = new Program("Example Program", "Andrew Meyer", 22.50);
+		this.instructor = new Instructor("Andrew","Meyer","andrew","password");
+		this.program = new Program("Example Program", instructor, 22.50);
 	}
 
 	@Test
@@ -28,13 +31,14 @@ public class ProgramTest {
 
 	@Test
 	public void testGetInstructor() {
-		assertEquals("Andrew Meyer", program.getInstructor());
+		assertEquals(instructor, program.getInstructor());
 	}
 	@Test
 	public void testSetInstructor() {
-		program.setInstructor("Charlie Liberski");
+		Instructor instructor2 = new Instructor("Charlie","Liberski","charlie","password");
+		program.setInstructor(instructor2);
 
-		assertEquals("Charlie Liberski", program.getInstructor());
+		assertEquals(instructor2, program.getInstructor());
 	}
 
 	@Test

@@ -9,14 +9,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.time;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.InstructorFinder;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.ProgramCreator;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.requests.CreateProgramRequest;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.responses.CreateProgramResponse;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.responses.ListInstructorsResponse;
 
 @SuppressWarnings("serial")
 public class NewProgramFormServlet extends BaseServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		forwardToJsp("new_program_form.jsp", req, resp);
+		ListInstructorsResponse listInstructorsResp = new InstructorFinder().listInstructors();
+
+		if (listInstructorsResp.instructors != null && listInstructorsResp.instructors.size() != 0) {
+			req.setAttribute("instructors", listInstructorsResp.instructors);
+			forwardToJsp("new_program_form.jsp", req, resp);
+		}
+		else {
+			forwardToJsp("new_program_error.jsp", req, resp);
+		}
 	}
 
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException

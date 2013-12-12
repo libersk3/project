@@ -16,7 +16,9 @@ public class StudentValidatorTest {
 
 	private String firstName;
 	private String lastName;
+	private String DOB;
 	private String email;
+	private boolean primary;
 
 	@Before
 	public void setUp() {
@@ -24,13 +26,15 @@ public class StudentValidatorTest {
 	}
 
 	private void validate() {
-		errors = studentValidator.validate(firstName, lastName, email);
+		errors = studentValidator.validate(firstName, lastName, DOB, email, primary);
 	}
 
 	private void generateValidParams() {
 		firstName = "Andrew";
 		lastName = "Meyer";
+		DOB = "12/12/1990";
 		email = "test@example.com";
+		primary = true;
 	}
 
 	@Test

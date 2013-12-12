@@ -37,7 +37,7 @@ public class InstructorProgramsServlet extends BaseServlet {
 			ListProgramsResponse listProgramsResp = new ProgramFinder().listPrograms();
 			Set<Program> programs = new HashSet<Program>();
 			for (Program program : listProgramsResp.programs){
-				if (program.getInstructor().equals(instructor.getFullName()))	
+				if (program.getInstructor().equals(instructor))	
 					programs.add(program);
 			}
 			req.setAttribute("programs", programs);

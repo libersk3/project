@@ -8,6 +8,7 @@ import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
 
+import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Instructor;
 import edu.uwm.cs361.fantastic_five.training_tracker.services.ProgramValidator;
 
 public class ProgramValidatorTest {
@@ -15,7 +16,7 @@ public class ProgramValidatorTest {
 	private Map<String, List<String>> errors;
 
 	private String name;
-	private String instructor;
+	private Instructor instructor;
 	private String price;
 
 	@Before
@@ -29,7 +30,7 @@ public class ProgramValidatorTest {
 
 	private void generateValidParams() {
 		name = "Example Program";
-		instructor = "Andrew Meyer";
+		instructor = new Instructor("Cassie","Dowling","cassie","password");
 		price = "2.50";
 	}
 
@@ -42,9 +43,9 @@ public class ProgramValidatorTest {
 	}
 
 	@Test
-	public void testBlankInstructor() {
+	public void testNullInstructor() {
 		generateValidParams();
-		instructor = "";
+		instructor = null;
 
 		validate();
 

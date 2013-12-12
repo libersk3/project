@@ -12,7 +12,7 @@ public class StudentTest {
 
 	@Before
 	public void setUpTest() {
-		this.student = new Student("George", "Washington", "gw@gmail.com", "mypass");
+		this.student = new Student("George", "Washington", "11/11/1911","gw@gmail.com", "mypass",true);
 	}
 
 	@Test
@@ -36,6 +36,11 @@ public class StudentTest {
 	}
 
 	@Test
+	public void testGetDOB() {
+		assertEquals("11/11/1911", student.getDOB());
+	}
+	
+	@Test
 	public void testSetFirstName() {
 		student.setFirstName("Benjamin");
 		assertEquals("Benjamin", student.getFirstName() );
@@ -57,17 +62,5 @@ public class StudentTest {
 	public void testSetPassword() {
 		student.setPassword("happy");
 		assertEquals("happy", student.getPassword());
-	}
-
-	@Test
-	public void testUpdateBalance() {
-		student.updateBalance(5.00);
-		assertEquals(5.00, student.getBalance(), .001);
-	}
-
-	@Test
-	public void testBalanceToString(){
-		student.updateBalance(5.00);
-		assertEquals("$5.00", student.balanceToString());
 	}
 } // end class

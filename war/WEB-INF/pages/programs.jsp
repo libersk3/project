@@ -9,7 +9,7 @@
 
 			<li>
 			<h2><a href="programs/single?id=${program.key.id}">${program.name}</a></h2>
-			<div class ="content">${program.instructor}
+			<div class ="content">${program.instructor.fullName}
 			<br/>
 			${program.price}
 			<c:if test="${not empty program.times}">
