@@ -43,7 +43,7 @@ public class Program {
 	private Set<Session> sessions;
 	
 	@Persistent
-	private List<time> times;
+	private List<Time> times;
 	
 	
 	public Program(String name, Instructor instructor, double price)
@@ -53,7 +53,7 @@ public class Program {
 		this.price = price;		
 	}
 
-	public Program(String name, Instructor instructor, double price, List<time> times)
+	public Program(String name, Instructor instructor, double price, List<Time> times)
 	{
 		this.name = name;
 		this.instructor = instructor;
@@ -107,7 +107,7 @@ public class Program {
 		return students;
 	}
 	
-	public List<time> getTimes(){
+	public List<Time> getTimes(){
 		return times;
 	}
 	

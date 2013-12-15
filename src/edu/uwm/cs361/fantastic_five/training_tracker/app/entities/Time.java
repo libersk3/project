@@ -9,7 +9,7 @@ import javax.jdo.annotations.PrimaryKey;
 import com.google.appengine.api.datastore.Key;
 
 @PersistenceCapable
-public class time {
+public class Time {
 
 	@Persistent
 	public String day;
@@ -20,7 +20,7 @@ public class time {
 	@Persistent
 	public String end_time;
 	
-	public time(String day, String start_time, String end_time){
+	public Time(String day, String start_time, String end_time){
 		this.day = day;
 		this.start_time = start_time;
 		this.end_time = end_time;		
