@@ -2,12 +2,12 @@ package edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases;
 
 import javax.jdo.PersistenceManager;
 
+import edu.uwm.cs361.fantastic_five.training_tracker.app.services.PersistenceService;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.services.ProgramValidator;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.requests.CreateProgramRequest;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.responses.CreateProgramResponse;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Instructor;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Program;
-import edu.uwm.cs361.fantastic_five.training_tracker.services.PersistenceService;
-import edu.uwm.cs361.fantastic_five.training_tracker.services.ProgramValidator;
 
 public class ProgramCreator {
 	public CreateProgramResponse createProgram(CreateProgramRequest req) {

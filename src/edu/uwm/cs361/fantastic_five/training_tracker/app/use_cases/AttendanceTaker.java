@@ -6,9 +6,9 @@ import javax.jdo.PersistenceManager;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Program;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Session;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Student;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.services.PersistenceService;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.requests.AttendanceRequest;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.responses.AttendanceResponse;
-import edu.uwm.cs361.fantastic_five.training_tracker.services.PersistenceService;
 
 public class AttendanceTaker {
 	public AttendanceResponse takeAttendance(AttendanceRequest req) {

@@ -1,4 +1,4 @@
-package edu.uwm.cs361.fantastic_five.training_tracker.tests;
+package edu.uwm.cs361.fantastic_five.training_tracker.tests.entities;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
@@ -11,6 +11,7 @@ import org.junit.Test;
 
 import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Instructor;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Program;
+import edu.uwm.cs361.fantastic_five.training_tracker.tests.AppEngineTest;
 
 public class AppEngineProgramTest extends AppEngineTest {
 	Program program;

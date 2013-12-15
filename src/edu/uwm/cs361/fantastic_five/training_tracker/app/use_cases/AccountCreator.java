@@ -4,10 +4,10 @@ import javax.jdo.PersistenceManager;
 
 import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Student;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.account;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.services.AccountValidator;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.services.PersistenceService;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.requests.CreateAccountRequest;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.responses.CreateAccountResponse;
-import edu.uwm.cs361.fantastic_five.training_tracker.services.AccountValidator;
-import edu.uwm.cs361.fantastic_five.training_tracker.services.PersistenceService;
 
 public class AccountCreator {
 	public CreateAccountResponse createAccount(CreateAccountRequest req) {

@@ -9,7 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Instructor;
-import edu.uwm.cs361.fantastic_five.training_tracker.services.ProgramValidator;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.services.ProgramValidator;
 
 public class ProgramValidatorTest {
 	private ProgramValidator programValidator;

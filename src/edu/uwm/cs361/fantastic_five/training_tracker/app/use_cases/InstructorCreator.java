@@ -3,9 +3,9 @@ package edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases;
 import javax.jdo.PersistenceManager;
 
 import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Instructor;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.services.PersistenceService;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.requests.CreateInstructorRequest;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.responses.CreateInstructorResponse;
-import edu.uwm.cs361.fantastic_five.training_tracker.services.PersistenceService;
 
 public class InstructorCreator {
 	public CreateInstructorResponse createInstructor(CreateInstructorRequest req) {

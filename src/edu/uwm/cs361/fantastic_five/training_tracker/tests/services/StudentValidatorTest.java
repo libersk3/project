@@ -8,7 +8,7 @@ import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
 
-import edu.uwm.cs361.fantastic_five.training_tracker.services.StudentValidator;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.services.StudentValidator;
 
 public class StudentValidatorTest {
 	private StudentValidator studentValidator;

@@ -1,4 +1,4 @@
-package edu.uwm.cs361.fantastic_five.training_tracker.services;
+package edu.uwm.cs361.fantastic_five.training_tracker.app.services;
 
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;

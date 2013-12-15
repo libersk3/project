@@ -1,4 +1,4 @@
-package edu.uwm.cs361.fantastic_five.training_tracker.services;
+package edu.uwm.cs361.fantastic_five.training_tracker.app.services;
 
 import java.util.ArrayList;
 import java.util.HashMap;

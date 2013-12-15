@@ -5,9 +5,9 @@ import java.util.List;
 import javax.jdo.PersistenceManager;
 
 import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.account;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.services.PersistenceService;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.requests.ListAccountsRequest;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.responses.ListAccountsResponse;
-import edu.uwm.cs361.fantastic_five.training_tracker.services.PersistenceService;
 
 public class AccountFinder {
 	@SuppressWarnings("unchecked")
