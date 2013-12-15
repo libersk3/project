@@ -12,10 +12,10 @@ import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.team;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.services.PersistenceService;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.requests.EnrollStudentRequest;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.requests.ListUnenrolledStudentsRequest;
-import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.requests.addTeamMemberRequest;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.requests.AddTeamMemberRequest;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.responses.EnrollStudentResponse;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.responses.ListUnenrolledStudentsResponse;
-import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.responses.addTeamMemberResponse;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.responses.AddTeamMemberResponse;
 
 public class teamMemberEnroller {
 	@SuppressWarnings("unchecked")
@@ -42,8 +42,8 @@ public class teamMemberEnroller {
 		return resp;
 	}
 
-	public addTeamMemberResponse addTeamMember(addTeamMemberRequest req) {
-		addTeamMemberResponse resp = new addTeamMemberResponse();
+	public AddTeamMemberResponse addTeamMember(AddTeamMemberRequest req) {
+		AddTeamMemberResponse resp = new AddTeamMemberResponse();
 
 		PersistenceManager pm = getPersistenceManager();
 
