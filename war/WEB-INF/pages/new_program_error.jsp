@@ -7,7 +7,7 @@
 	
 	<div class="error-message">
 		<h2>**Error: You must create an instructor before adding a new program.**</h2>
-		<a href='instructors/new' class="button blue">Create Instructor</a>
+		<a href='/instructors/new' class="button blue">Create Instructor</a>
 	</div>
 	
 </t:mainLayout>
