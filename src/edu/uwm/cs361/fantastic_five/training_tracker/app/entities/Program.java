@@ -1,14 +1,11 @@
 package edu.uwm.cs361.fantastic_five.training_tracker.app.entities;
-
 import java.util.List;
 import java.util.Set;
-
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 import com.google.appengine.datanucleus.annotations.Unowned;
-
 import com.google.appengine.api.datastore.Key;
 
 @PersistenceCapable
@@ -27,6 +24,9 @@ public class Program {
 	@Persistent
 	private double price;
 	
+	@Persistent
+	private double revenue;
+	
 	
 	@Persistent
 	private double discount;
@@ -37,6 +37,10 @@ public class Program {
 	@Unowned
 	@Persistent
 	private Set<Student> students;
+	
+	@Unowned
+	@Persistent
+	private Award prereq;
 	
 	
 	@Persistent
@@ -85,6 +89,14 @@ public class Program {
 	{
 		this.instructor = instructor;
 	}
+	
+	public void setPrereq(Award prereq){
+		this.prereq = prereq;
+	}
+	
+	public Award getPrereq(){
+		return prereq;
+	}
 
 	public double getPrice(){
 		return price;
@@ -92,9 +104,20 @@ public class Program {
 	public void setPrice(double price) {
 		this.price = price;
 	}
+	
+	public double getDiscount(){
+		return discount;
+	}
+	public void setDisctount(double discount) {
+		this.discount = discount;
+	}
 
+	public double updateRevenue(double charge){
+		return revenue += charge;
+	}
+	
 	public double getRevenue(){
-		return students.size()*price;
+		return revenue;
 	}
 
 	public void addStudent(Student student){

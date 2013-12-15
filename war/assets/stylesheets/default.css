@@ -27,7 +27,13 @@ input {
 	display: table-cell;
 }
 
+bottom{
+	padding-bottom:80px; 
+	
+}
+
 footer {
+	
 	text-align: center;
 }
 
@@ -177,11 +183,19 @@ footer {
 .blue {
 	color: #19667d;
 	background: #70c9e3;
+}/* purple color */
+.purple {
+	color: #660099;
+	background: #6666FF;
 }
 /* Gray Color */
 .gray {
 	color: #515151;
 	background: #d3d3d3;
+}/* orange Color */
+.red {
+	color: #ff4000;
+	background: #ffA800;
 }
 
 
@@ -190,6 +204,7 @@ footer {
 }
 
 .button-main {
+	width: 8em;
 	font: bold 42px/55px Arial, sans-serif;
 }
 

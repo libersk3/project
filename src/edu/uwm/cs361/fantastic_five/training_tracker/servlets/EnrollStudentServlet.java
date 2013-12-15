@@ -31,8 +31,6 @@ public class EnrollStudentServlet extends BaseServlet {
 		enrollStudentRequest.studentId = req.getParameter("student");
 		enrollStudentRequest.programId = req.getParameter("id");
 
-		
-		
 		EnrollStudentResponse enrollStudentResponse = new StudentEnroller().enrollStudent(enrollStudentRequest);
 
 		if (enrollStudentResponse.success) {

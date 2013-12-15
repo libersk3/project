@@ -10,6 +10,6 @@
 				<li>${student.fullName}</li>
 			</c:forEach>
 		</ul>
-		<a href='/programs/enroll?id=${program.key.id}'>Add Team Member</a>
+		<a href='/teams/enroll?id=${program.key.id}'>Add Team Member</a>
 	</c:if>
 </t:mainLayout>

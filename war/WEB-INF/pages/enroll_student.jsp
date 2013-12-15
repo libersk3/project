@@ -13,6 +13,21 @@
 					<input type='radio' name='student' value='${student.key.id}'/> ${student.fullName}
 					<br/>
 				</c:forEach>
+				${blah}
+					<c:if test="${not empty program.times}">
+					
+						<c:forEach items= "${program.times}" var="time">
+							<br/>
+						
+							<h2><input type="checkbox" name="day" value=time.day> 
+							${time.day}
+							${time._times}<h2>
+							<hr/>
+						</c:forEach>
+					</c:if>
+					
+					
+					
 				<input type='submit' value='Enroll Student'>
 			</form>
 		</c:if>

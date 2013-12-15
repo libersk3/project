@@ -7,7 +7,7 @@
 	<ul class="accordion">
 		<c:forEach items="${students}" var="student">
 			<li>
-				<h2>${student.firstName}</h2>
+				<h2><a href="students/single?id=${student.key.id}">${student.firstName}</a></h2>
 				<div class="content">
 					Email: ${student._email}
 					<br/>

@@ -1,11 +1,14 @@
 package edu.uwm.cs361.fantastic_five.training_tracker.app.entities;
 
+import java.util.Set;
+
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
 import com.google.appengine.api.datastore.Key;
+import com.google.appengine.datanucleus.annotations.Unowned;
 
 @PersistenceCapable
 public class Student {
@@ -19,27 +22,41 @@ public class Student {
 
 	@Persistent
 	private String lastName;
-
+	
+	@Persistent
+	private String DOB;
+	
 	@Persistent
 	private String _email;
 	
 	@Persistent
 	private String _password;
-
+	
 	@Persistent
-	private double balance;
-
-
+	private boolean primary;
+	
+	@Unowned 
+	@Persistent
+	private Set<Award> awards;
+	
+	@Unowned
+	@Persistent
+	private Account account;
+	
+	@Unowned
+	@Persistent
+	private Set<Program> programs;
 
 	//****************************************************
 
-	public Student(String firstName, String lastName, String _email, String _pass) {
+	public Student(String firstName, String lastName, String DOB, String _email, String _pass, boolean primary) {
 
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.DOB = DOB;
 		this._email = _email;
 		this._password = _pass;
-		balance = 0.0;
+		this.primary = primary;
 	}
 
 	//****************************************************
@@ -63,6 +80,17 @@ public class Student {
 
 	public Key getKey() {
 		return this.key;
+	}
+	
+	public boolean addAccount(Account a){
+		a.addDependent(this);
+		account = a;
+		if(a.containsDependent(this))return true;
+		return false;
+	}
+	
+	public Account getAccount(){
+		return account;
 	}
 
 	public String getFirstName() {
@@ -100,17 +128,20 @@ public class Student {
 	public void setPassword(String p) {
 		this._password = p;
 	}
+
+	public String getDOB() {
+		return DOB;
+	}
 	
-	public double getBalance(){
-		return balance;
+	public void addProgram(Program program){
+		programs.add(program);
+	}
+	public Set<Program> getPrograms() {
+		return programs;
 	}
 
-	public String balanceToString(){
-		return String.format("$%.2f", new Double(balance));
+	public boolean isPrimary() {
+		return primary;
 	}
-
-	public void updateBalance(double price){
-		balance+=price;
-	}
-
+	
 } //end class

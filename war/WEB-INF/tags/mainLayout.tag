@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="/assets/stylesheets/default.css"/>
 </head>
 <body>
+	<body background="http://www.appxmkf.com/images/body-by-bg.jpg">
 	<header class="navbar">
 		<div class="brand"><a href="/homepage">Fantastic Five Training Application Prototype</a></div>
 		<nav>
@@ -30,7 +31,9 @@
 	</article>
 </body>
 <footer>
+	<bottom>
 	<a href='/homepage' class="button blue">home</a>
 	<a href='/logout' class="button gray">Logout</a>
+	</bottom>
 </footer>
 </html>

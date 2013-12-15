@@ -106,6 +106,23 @@ public class StudentEnroller {
 				}
 
 				program.addStudent(student);
+				student.getAccount().updateBalance(program.getPrice());
+				
+				//TODO:not sure if this is how we would check to see if the discount option was selected, we need to look into this.
+				if(resp.discount == true){
+					for(Student s: student.getAccount().getDependents()){
+						program.addStudent(s);
+						s.addProgram(program);
+					}
+					student.getAccount().updateBalance(program.getDiscount());
+					program.updateRevenue(program.getDiscount());
+				}else{
+					program.addStudent(student);
+					student.addProgram(program);
+					student.getAccount().updateBalance(program.getPrice());
+					program.updateRevenue(program.getPrice());
+				}
+				
 
 				resp.success = true;
 			}
