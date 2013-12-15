@@ -4,7 +4,7 @@ import java.util.List;
 
 import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.time;
 
-public class createTeamRequest {
+public class CreateTeamRequest {
 	public String name;
 	public String price;
 }
