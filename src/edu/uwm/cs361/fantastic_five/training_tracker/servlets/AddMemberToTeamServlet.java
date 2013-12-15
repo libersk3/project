@@ -6,7 +6,7 @@
 import javax.servlet.http.*;
 
 	import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.StudentEnroller;
-import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.teamMemberEnroller;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.TeamMemberEnroller;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.requests.EnrollStudentRequest;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.requests.ListUnenrolledStudentsRequest;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.requests.AddTeamMemberRequest;
@@ -33,7 +33,7 @@ import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.responses.Add
 			addTeamMemberRequest.studentId = req.getParameter("student");
 			addTeamMemberRequest.teamId = req.getParameter("id");
 
-			AddTeamMemberResponse addTeamMemberResponse = new teamMemberEnroller().addTeamMember(addTeamMemberRequest);
+			AddTeamMemberResponse addTeamMemberResponse = new TeamMemberEnroller().addTeamMember(addTeamMemberRequest);
 
 			if (addTeamMemberResponse.success) {
 				resp.sendRedirect("/programs");

@@ -17,7 +17,7 @@ import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.responses.Enr
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.responses.ListUnenrolledStudentsResponse;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.responses.AddTeamMemberResponse;
 
-public class teamMemberEnroller {
+public class TeamMemberEnroller {
 	@SuppressWarnings("unchecked")
 	public ListUnenrolledStudentsResponse listUnenrolledStudents(ListUnenrolledStudentsRequest req) {
 		ListUnenrolledStudentsResponse resp = new ListUnenrolledStudentsResponse();
