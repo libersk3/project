@@ -3,7 +3,7 @@ package edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases;
 import javax.jdo.PersistenceManager;
 
 import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Program;
-import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.team;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Team;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.services.PersistenceService;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.requests.ViewProgramRequest;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.requests.ViewTeamRequest;
@@ -17,7 +17,7 @@ public class TeamViewer {
 
 		String id = req.id;
 		long idLong = Long.parseLong(id);
-		team team = pm.getObjectById(team.class, idLong);
+		Team team = pm.getObjectById(Team.class, idLong);
 
 		resp.team = team;
 		if (team != null) resp.students = team.listStudents();

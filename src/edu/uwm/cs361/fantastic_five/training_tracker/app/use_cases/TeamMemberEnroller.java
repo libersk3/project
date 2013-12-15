@@ -8,7 +8,7 @@ import javax.jdo.Query;
 
 import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Program;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Student;
-import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.team;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Team;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.services.PersistenceService;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.requests.EnrollStudentRequest;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.requests.ListUnenrolledStudentsRequest;
@@ -28,7 +28,7 @@ public class TeamMemberEnroller {
 			List<Student> allStudents = (List<Student>) q.execute();
 
 			long teamId = Long.parseLong(req.teamId);
-			team team = pm.getObjectById(team.class, teamId);
+			Team team = pm.getObjectById(Team.class, teamId);
 
 			ArrayList<Student> unenrolledStudents = new ArrayList<Student>(allStudents);
 			unenrolledStudents.removeAll(team.listStudents());
@@ -55,7 +55,7 @@ public class TeamMemberEnroller {
 				long studentId = Long.parseLong(req.studentId);
 				long teamId = Long.parseLong(req.teamId);
 
-				team team = pm.getObjectById(team.class, teamId);
+				Team team = pm.getObjectById(Team.class, teamId);
 				Student student = pm.getObjectById(Student.class, studentId);
 
 				team.addStudent(student);

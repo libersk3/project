@@ -11,7 +11,7 @@ import com.google.appengine.api.datastore.Key;
 import com.google.appengine.datanucleus.annotations.Unowned;
 
 @PersistenceCapable
-public class team {
+public class Team {
 
 		@PrimaryKey
 		@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
@@ -27,7 +27,7 @@ public class team {
 		@Persistent
 		private Set<Student> students;
 		
-		public team(String name, double price)
+		public Team(String name, double price)
 		{
 			this.name = name;
 			this.price = price;
