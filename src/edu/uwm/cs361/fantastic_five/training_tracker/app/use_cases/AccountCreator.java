@@ -3,7 +3,7 @@ package edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases;
 import javax.jdo.PersistenceManager;
 
 import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Student;
-import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.account;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Account;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.services.AccountValidator;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.services.PersistenceService;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.requests.CreateAccountRequest;
@@ -22,7 +22,7 @@ public class AccountCreator {
 
 		try {
 			Student student = pm.getObjectById(Student.class,Long.parseLong(req.primary));
-			pm.makePersistent(new account(student, req.address, req.phone));
+			pm.makePersistent(new Account(student, req.address, req.phone));
 			resp.success = true;
 		} finally {
 			pm.close();
@@ -34,7 +34,7 @@ public class AccountCreator {
 		PersistenceManager pm = getPersistenceManager();
 		CreateAccountResponse resp = new CreateAccountResponse();
 		try {
-			account account = pm.getObjectById(account.class,Long.parseLong(req.primary));
+			Account account = pm.getObjectById(Account.class,Long.parseLong(req.primary));
 			account.addDependent(pm.getObjectById(Student.class,Long.parseLong(req.student)));
 			resp.success = true;
 			} catch(Exception e) {

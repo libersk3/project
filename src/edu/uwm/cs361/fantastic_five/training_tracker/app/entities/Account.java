@@ -10,7 +10,7 @@ import com.google.appengine.api.datastore.Key;
 import com.google.appengine.datanucleus.annotations.Unowned;
 
 @PersistenceCapable
-public class account {
+public class Account {
 	
 	@PrimaryKey
 	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
@@ -33,7 +33,7 @@ public class account {
 	@Persistent
 	private double balance;
 	
-	public account(Student owner, String address, String phone) {
+	public Account(Student owner, String address, String phone) {
 		this.primary = owner;
 		this.address = address;
 		this.phone = phone;

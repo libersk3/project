@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.jdo.PersistenceManager;
 
-import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.account;
+import edu.uwm.cs361.fantastic_five.training_tracker.app.entities.Account;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.services.PersistenceService;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.requests.ListAccountsRequest;
 import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.responses.ListAccountsResponse;
@@ -16,7 +16,7 @@ public class AccountFinder {
 
 		PersistenceManager pm = getPersistenceManager();
 
-		resp.accounts = (List<account>) pm.newQuery(account.class).execute();
+		resp.accounts = (List<Account>) pm.newQuery(Account.class).execute();
 
 		return resp;
 	}
