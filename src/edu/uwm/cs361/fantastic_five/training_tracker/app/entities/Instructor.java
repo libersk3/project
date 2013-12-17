@@ -38,7 +38,7 @@ public class Instructor {
 		this._password = _pass;
 	}
 
-	//****************************************************
+	//****************************************************	
 	public boolean equals(Object other) {
 		if (other == null || !(other instanceof Instructor)) return false;
 		if (other == this) return true;

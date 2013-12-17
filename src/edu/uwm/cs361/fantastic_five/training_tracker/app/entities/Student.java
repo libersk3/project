@@ -35,6 +35,14 @@ public class Student {
 	@Persistent
 	private boolean primary;
 	
+	@Unowned 
+	@Persistent
+	private Set<Award> awards;
+	
+	@Unowned
+	@Persistent
+	private Account account;
+	
 	@Unowned
 	@Persistent
 	private Set<Program> programs;
@@ -72,6 +80,17 @@ public class Student {
 
 	public Key getKey() {
 		return this.key;
+	}
+	
+	public boolean addAccount(Account a){
+		a.addDependent(this);
+		account = a;
+		if(a.containsDependent(this))return true;
+		return false;
+	}
+	
+	public Account getAccount(){
+		return account;
 	}
 
 	public String getFirstName() {

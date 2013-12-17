@@ -46,8 +46,7 @@ public class NewProgramFormServlet extends BaseServlet {
 		for(String s:day_array){
 			if(s.equals("sun")){
 				datesAndTimes.add(new Time("Sunday",req.getParameter("sun_start"), req.getParameter("mon_end")));
-			}
-			else if(s.equals("mon")){
+			}else if(s.equals("mon")){
 				datesAndTimes.add(new Time("Monday",req.getParameter("mon_start"), req.getParameter("mon_end")));
 			}else if(s.equals("tue")){
 				datesAndTimes.add(new Time("Tuesday",req.getParameter("tue_start"), req.getParameter("tue_end")));

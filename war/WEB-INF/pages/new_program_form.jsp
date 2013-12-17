@@ -21,9 +21,9 @@
 		</select>
 		<br>
 		<br>
-		<label for='price'>Price:</label>
+		<label for='price'>Price: $</label>
 		<input type='text' id='price' name='price' value='${price}' />
-		<label for='discountPrice'>Family Price:</label>
+		<label for='discountPrice'>Family Price: $</label>
 		<input type='text' id='discountprice' name='discountPrice' />
 		<br>
 		<ul class="accordion">

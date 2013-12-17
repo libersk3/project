@@ -28,6 +28,6 @@ public class CreateTeamServlet extends BaseServlet {
 		
 		new TeamCreator().createTeam(createRequest);
 
-		resp.sendRedirect("/programs");
+		resp.sendRedirect("/teams");
 	}
 }

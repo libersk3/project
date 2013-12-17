@@ -20,6 +20,7 @@ public class EnrollStudentServlet extends BaseServlet {
 		ListUnenrolledStudentsResponse listUnenrolledStudentsResponse = new StudentEnroller().listUnenrolledStudents(listUnenrolledStudentsReq);
 
 		req.setAttribute("program", listUnenrolledStudentsResponse.program);
+		req.setAttribute("blah", (listUnenrolledStudentsResponse.program.getTimes() == null) ? "true" : "false");
 		req.setAttribute("StudentsList", listUnenrolledStudentsResponse.unenrolledStudents);
 		forwardToJsp("enroll_student.jsp", req, resp);
 	}
@@ -29,8 +30,6 @@ public class EnrollStudentServlet extends BaseServlet {
 		EnrollStudentRequest enrollStudentRequest = new EnrollStudentRequest();
 		enrollStudentRequest.studentId = req.getParameter("student");
 		enrollStudentRequest.programId = req.getParameter("id");
-
-
 
 		EnrollStudentResponse enrollStudentResponse = new StudentEnroller().enrollStudent(enrollStudentRequest);
 

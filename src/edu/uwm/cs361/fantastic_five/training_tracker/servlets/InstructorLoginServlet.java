@@ -1,7 +1,5 @@
 package edu.uwm.cs361.fantastic_five.training_tracker.servlets;
-
 import java.io.IOException;
-
 import javax.jdo.PersistenceManager;
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;

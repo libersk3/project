@@ -55,6 +55,11 @@ public class Account {
 		dependents.add(s);
 	}
 	
+	public boolean containsDependent(Student s){
+		if(dependents.contains(s))return true;
+		return false;
+	}
+	
 	public String getEmail() {
 		return primary.get_email();
 	}
@@ -81,5 +86,9 @@ public class Account {
 	}
 	public void updateBalance(double price){
 		balance+=price;
+	}
+	public double makePayment(double payment){
+		balance =- payment;
+		return balance;
 	}
 }

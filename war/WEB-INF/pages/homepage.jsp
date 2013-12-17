@@ -4,15 +4,15 @@
 <t:mainLayout title="Homepage">
 <footer>
 		<a href='/instructors' class="button blue button-main">Instructors</a>
+		
+		<a href='/programs' class="button blue button-main">Programs</a>
 		<br>
-		<a href='/programs' class="button green button-main">Programs</a>
-		<br>
-		<a href='/students' class="button blue button-main">Students</a>
-		<br>
+		<a href='/students' class="button green button-main">Students</a>
+		
 		<a href='/accounts' class="button green button-main">Accounts</a>
 		<br>
-		<a href ='/teams' class="button blue button-main">Teams</a>
-		<br>
+		<a href ='/teams' class="button gray button-main">Teams</a>
+		
 		<a href='/treasury' class="button gray button-main">Treasury</a><br><br><br><br>
 </footer>
 
