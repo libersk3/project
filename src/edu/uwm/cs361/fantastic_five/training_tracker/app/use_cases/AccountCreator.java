@@ -35,7 +35,10 @@ public class AccountCreator {
 		CreateAccountResponse resp = new CreateAccountResponse();
 		try {
 			Account account = pm.getObjectById(Account.class,Long.parseLong(req.primary));
-			account.addDependent(pm.getObjectById(Student.class,Long.parseLong(req.student)));
+			Student student = pm.getObjectById(Student.class,Long.parseLong(req.student));
+			account.addDependent(student);
+			student.addAccount(account);
+			
 			resp.success = true;
 			} catch(Exception e) {
 				resp.success = false;

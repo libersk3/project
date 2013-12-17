@@ -3,17 +3,27 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
-<t:mainLayout title="Add Team Member">
+<t:mainLayout title="Add Team Member to ${team.name}">
+		<h1>Add member to ${team.name}:</h1>
+	
 	<form class='well' action='' method='POST'>
-
-		<c:if test='${not empty team}'>
-
-			<h1> Add Member to ${team.name}:</h1>
+			
 			<form action='' method = 'POST'>
-				<c:forEach items="${StudentsList}" var="student">
-					<br><input type='radio' name='student' value='${student.key.id}'/> '${student.firstName} '${student.lastName}
+
+		<c:forEach items="${students}" var="student">
+			<option value='${student.key.id}'> ${student.fullName}</option>
+		</c:forEach>
+		
+		<c:forEach items="${StudentsList}" var="student">
+					
+					<input type='radio' name='student' value='${student.key.id}'/> ${student.fullName}
+					<br/>
 				</c:forEach>
+					
+
+			
+				
+				
 					<br><input type='submit' value='Add Team Member'>
 			</form>
-		</c:if>
 </t:mainLayout>

@@ -18,11 +18,11 @@ import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.responses.Add
 	public class AddMemberToTeamServlet extends BaseServlet {
 		public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 			ListUnenrolledStudentsRequest listUnenrolledStudentsReq = new ListUnenrolledStudentsRequest();
-			listUnenrolledStudentsReq.programId = req.getParameter("id");
+			listUnenrolledStudentsReq.teamId = req.getParameter("id");
 
 			ListUnenrolledStudentsResponse listUnenrolledStudentsResponse = new StudentEnroller().listUnenrolledStudents(listUnenrolledStudentsReq);
 
-			req.setAttribute("team", listUnenrolledStudentsResponse.program);
+			req.setAttribute("team", listUnenrolledStudentsResponse.team);
 			req.setAttribute("StudentsList", listUnenrolledStudentsResponse.unenrolledStudents);
 			forwardToJsp("addTeamMember.jsp", req, resp);
 		}
@@ -36,7 +36,7 @@ import edu.uwm.cs361.fantastic_five.training_tracker.app.use_cases.responses.Add
 			AddTeamMemberResponse addTeamMemberResponse = new TeamMemberEnroller().addTeamMember(addTeamMemberRequest);
 
 			if (addTeamMemberResponse.success) {
-				resp.sendRedirect("/programs");
+				resp.sendRedirect("/teams");
 			} else {
 				resp.setContentType("text/html");
 

@@ -41,7 +41,24 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>NewTeamForm</servlet-name>
 		<url-pattern>/teams/new</url-pattern>
 	</servlet-mapping>
+		<servlet>
+		<servlet-name>SingleTeamServlet</servlet-name>
+		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.servlets.SingleTeamServlet</servlet-class>
+	</servlet>
+		<servlet-mapping>
+		<servlet-name>SingleTeamServlet</servlet-name>
+		<url-pattern>/teams/single</url-pattern>
+	</servlet-mapping>
 	
+		<servlet>
+		<servlet-name>AddMemberToTeamServlet</servlet-name>
+		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.servlets.AddMemberToTeamServlet</servlet-class>
+	</servlet>
+		<servlet-mapping>
+		<servlet-name>AddMemberToTeamServlet</servlet-name>
+		<url-pattern>/teams/enroll</url-pattern>
+	</servlet-mapping>
+
 	
 	<!-- Students -->
 	<servlet>

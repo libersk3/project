@@ -10,15 +10,17 @@
 		<c:if test='${not empty program}'>
 			<form action='' method = 'POST'>
 			
-			<c:forEach items="${accounts}" var="account">
-			<option value='${student.key.id}'> ${student.fullName}</option>
-		</c:forEach>
+
 			
+		
+			<select name="student">
 				<c:forEach items="${StudentsList}" var="student">
+					<option value='${student.key.id}'> ${student.fullName}</option>
 					
-					<input type='radio' name='student' value='${student.key.id}'/> ${student.fullName}
-					<br/>
+					
+					
 				</c:forEach>
+			</select>
 					<c:if test="${not empty program.times}">
 					
 						<c:forEach items= "${program.times}" var="time">

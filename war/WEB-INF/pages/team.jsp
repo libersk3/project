@@ -4,7 +4,7 @@
 
 <t:mainLayout title="${team.name}">
 	<c:if test="${not empty team}">
-		<h1>Enrolled Students in ${team.name}:</h1>
+		<h1>Team Members of ${team.name}:</h1>
 		<ul>
 			<c:forEach items="${students}" var="student">
 				<li>${student.fullName}</li>

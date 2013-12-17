@@ -107,6 +107,9 @@ public class StudentEnroller {
 
 				program.addStudent(student);
 				student.addProgram(program);
+				//System.out.println(student.toString());
+				System.out.println(student.getAccount().toString());
+				student.getAccount().updateBalance(program.getPrice());
 				resp.success = true;
 			}
 		} finally {
