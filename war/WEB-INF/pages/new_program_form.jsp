@@ -23,8 +23,8 @@
 		<br>
 		<label for='price'>Price: $</label>
 		<input type='text' id='price' name='price' value='${price}' />
-		<label for='discountPrice'>Family Price: $</label>
-		<input type='text' id='discountprice' name='discountPrice' />
+		<label for='discount'>Family Price: $</label>
+		<input type='text' id='discount' name='discount' value ='${discount}' />
 		<br>
 		<ul class="accordion">
 		<li>

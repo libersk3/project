@@ -27,12 +27,14 @@
 						
 							<h2><input type="checkbox" name="day" value=time.day> 
 							${time.day}
-							${time._times}<h2>
+							${time._times}
 						</c:forEach>
+				
+				<br>
+				<input type="checkbox" name="discount" value=true>
+				Family discount: $ ${program.discount}<br><h2>
+				
 					</c:if>
-				
-				
-				
 				
 				<input type='submit' value='Enroll Student'>
 			</form>

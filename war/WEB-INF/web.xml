@@ -304,8 +304,20 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<url-pattern>/accounts</url-pattern>
 	</servlet-mapping>
 	
+		<!--  Email -->
+	<servlet>
+		<servlet-name>Email</servlet-name>
+		<servlet-class>edu.uwm.cs361.fantastic_five.training_tracker.servlets.EmailServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Email</servlet-name>
+		<url-pattern>/email</url-pattern>
+	</servlet-mapping>
+	
 	<!-- index -->
 	<welcome-file-list>
 		<welcome-file>homepage</welcome-file>
 	</welcome-file-list>
 </web-app>
+
+

@@ -67,6 +67,15 @@ public class Program {
 		
 	}
 	
+	public Program(String name, Instructor instructor, double price, double discount, List<Time> times)
+	{
+		this.name = name;
+		this.instructor = instructor;
+		this.price = price;
+		this.times= times;
+		this.discount = discount;
+	}
+	
 	public boolean getchooseTimes(){
 		return chooseTimes;
 	}

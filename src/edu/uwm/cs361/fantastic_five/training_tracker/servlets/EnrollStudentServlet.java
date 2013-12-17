@@ -31,7 +31,11 @@ public class EnrollStudentServlet extends BaseServlet {
 		enrollStudentRequest.studentId = req.getParameter("student");
 		enrollStudentRequest.programId = req.getParameter("id");
 
-		EnrollStudentResponse enrollStudentResponse = new StudentEnroller().enrollStudent(enrollStudentRequest);
+		String discount = "discount";
+		boolean _discount;
+		if(discount == "yes")_discount = true;
+		else _discount = false;
+		EnrollStudentResponse enrollStudentResponse = new StudentEnroller().enrollStudent(enrollStudentRequest, _discount);
 
 		if (enrollStudentResponse.success) {
 			resp.sendRedirect("/programs");

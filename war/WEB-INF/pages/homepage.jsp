@@ -13,7 +13,9 @@
 		<br>
 		<a href ='/teams' class="button gray button-main">Teams</a>
 		
-		<a href='/treasury' class="button gray button-main">Treasury</a><br><br><br><br>
+		<a href='/treasury' class="button gray button-main">Treasury</a><br>
+		<a href ='/email' class="button gray button-main">Email</a>
+		<br><br><br>
 </footer>
 
 </t:mainLayout>

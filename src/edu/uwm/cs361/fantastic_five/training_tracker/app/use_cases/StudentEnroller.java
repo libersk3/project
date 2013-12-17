@@ -55,6 +55,7 @@ public class StudentEnroller {
 		return resp;
 	}
 
+	
 	public EnrollStudentResponse enrollStudent(EnrollStudentRequest req) {
 		EnrollStudentResponse resp = new EnrollStudentResponse();
 
@@ -106,10 +107,84 @@ public class StudentEnroller {
 				}
 
 				program.addStudent(student);
-				student.addProgram(program);
+				
 				//System.out.println(student.toString());
+				 student.addProgram(program);
 				System.out.println(student.getAccount().toString());
 				student.getAccount().updateBalance(program.getPrice());
+				resp.success = true;
+			}
+		} finally {
+			pm.close();
+		}
+
+		return resp;
+	}
+	
+	public EnrollStudentResponse enrollStudent(EnrollStudentRequest req, boolean discount) {
+		EnrollStudentResponse resp = new EnrollStudentResponse();
+
+		PersistenceManager pm = getPersistenceManager();
+
+		try {
+			if (req.studentId == null) {
+				resp.success = false;
+				resp.error = "No student selected";
+			} else {
+				long studentId;
+				long programId;
+
+				try {
+					studentId = Long.parseLong(req.studentId);
+				} catch (NumberFormatException ex) {
+					resp.success = false;
+					resp.error = "Invalid student id.";
+
+					return resp;
+				}
+				try {
+					programId = Long.parseLong(req.programId);
+				} catch (NumberFormatException ex) {
+					resp.success = false;
+					resp.error = "Invalid program id.";
+
+					return resp;
+				}
+
+				Program program;
+				Student student;
+
+				try {
+					program = pm.getObjectById(Program.class, programId);
+				} catch (JDOObjectNotFoundException ex) {
+					resp.success = false;
+					resp.error = "The specified program does not exist.";
+
+					return resp;
+				}
+				try {
+					student = pm.getObjectById(Student.class, studentId);
+				} catch (JDOObjectNotFoundException ex) {
+					resp.success = false;
+					resp.error = "The specified student does not exist.";
+
+					return resp;
+				}
+
+				program.addStudent(student);
+				
+				//System.out.println(student.toString());
+				if(discount == true){
+					student.getAccount().updateBalance(program.getDiscount());
+
+					for(Student s:student.getAccount().getDependents()){
+						s.addProgram(program);
+					}
+				}else{
+					student.addProgram(program);
+					student.getAccount().updateBalance(program.getPrice());
+				}
+				System.out.println(student.getAccount().toString());
 				resp.success = true;
 			}
 		} finally {

@@ -27,4 +27,7 @@
 		</ul>
 		<br/>
 		<br/>
+		<footer>
+		<a href='students/new' class="button button-action blue">New Account</a>
+	</footer>
 </t:mainLayout>

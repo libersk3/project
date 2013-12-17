@@ -23,7 +23,7 @@ public class ProgramCreator {
 		}
 
 		try {
-			pm.makePersistent(new Program(req.name, instructor, Double.parseDouble(req.price), req.dates));
+			pm.makePersistent(new Program(req.name, instructor, Double.parseDouble(req.price), Double.parseDouble(req.discount), req.dates));
 			resp.success = true;
 		} finally {
 			pm.close();
